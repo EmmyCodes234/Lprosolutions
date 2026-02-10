@@ -42,7 +42,6 @@ const Footer: React.FC = () => {
                     {/* Brand Meta */}
                     <div className="lg:col-span-2">
                         <div className="flex items-center gap-2 mb-8">
-                            <div className="w-8 h-8 bg-accent rounded-full flex items-center justify-center text-stone-950 font-black text-xs">LP</div>
                             <span className="text-xl font-display font-black tracking-tighter">L-PRO SOLUTIONS</span>
                         </div>
                         <p className="text-stone-500 max-w-xs leading-relaxed font-light">
