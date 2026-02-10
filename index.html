@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>L-Pro Solutions</title>
+  <link rel="preload" as="image"
+    href="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2670&auto=format&fit=crop"
+    imagesrcset="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2670&auto=format&fit=crop"
+    fetchpriority="high" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            stone: {
+              50: '#fafaf9',
+              100: '#f5f5f4', // Main background tone
+              200: '#e7e5e4',
+              800: '#292524',
+              900: '#1c1917',
+            },
+            accent: {
+              DEFAULT: '#FBBC05', // Yellow/Orange from screenshot
+              hover: '#F59E0B',
+            }
+          },
+          borderRadius: {
+            '4xl': '2rem',
+            '5xl': '2.5rem',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['Courier New', 'monospace'], // Added for stat numbers
+          },
+          animation: {
+            'slow-zoom': 'slowZoom 20s infinite alternate',
+            'reveal-up': 'revealUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+            'draw-line': 'drawLine 4s ease-out forwards',
+            'marquee': 'marquee 30s linear infinite',
+            'pulse-slow': 'pulseSlow 3s infinite',
+          },
+          keyframes: {
+            slowZoom: {
+              '0%': { transform: 'scale(1)' },
+              '100%': { transform: 'scale(1.1)' },
+            },
+            revealUp: {
+              '0%': { transform: 'translateY(100%)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' },
+            },
+            drawLine: {
+              '0%': { strokeDashoffset: '4000' },
+              '100%': { strokeDashoffset: '0' }
+            },
+            marquee: {
+              '0%': { transform: 'translateX(0%)' },
+              '100%': { transform: 'translateX(-50%)' },
+            },
+            pulseSlow: {
+              '0%, 100%': { opacity: '1' },
+              '50%': { opacity: '0.5' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+    html.lenis {
+      height: auto;
+    }
+
+    .lenis.lenis-smooth {
+      scroll-behavior: auto;
+    }
+
+    .lenis.lenis-smooth [data-lenis-prevent] {
+      overscroll-behavior: contain;
+    }
+
+    .lenis.lenis-stopped {
+      overflow: hidden;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #000000;
+      /* Matches footer for seamless reveal */
+      color: #1c1917;
+      overflow-x: hidden;
+    }
+
+    /* Noise Texture */
+    .bg-noise {
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='1'/%3E%3C/svg%3E");
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #1c1917;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #44403c;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #57534e;
+    }
+
+    /* Reveal Text Helper */
+    .reveal-container {
+      overflow: hidden;
+      display: block;
+    }
+
+    /* Blend mode utility */
+    .blend-difference {
+      mix-blend-mode: difference;
+      color: white;
+    }
+
+    .blueprint-path {
+      stroke-dasharray: 4000;
+      stroke-dashoffset: 4000;
+      animation-name: drawLine;
+      animation-duration: 4s;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+    }
+  </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0"
+  }
+}
+</script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="firstName" />
+    <input type="text" name="lastName" />
+    <input type="email" name="email" />
+    <input type="text" name="service" />
+    <textarea name="message"></textarea>
+  </form>
+
+  <form name="newsletter" netlify netlify-honeypot="bot-field" hidden>
+    <input type="email" name="email" />
+  </form>
+
+  <script type="module" src="/index.tsx"></script>
+</body>
+
+</html>
