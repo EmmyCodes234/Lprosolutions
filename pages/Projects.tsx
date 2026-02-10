@@ -65,7 +65,7 @@ const Projects: React.FC = () => {
                      </Link>
                   </div>
                   <div className="h-[250px] md:h-[400px] lg:h-[600px] relative order-1 lg:order-2">
-                     <img src="https://images.unsplash.com/photo-1590059530462-8c1c46399426?q=80&w=2670&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover" alt="Road" />
+                     <img src="https://images.unsplash.com/photo-1581094794329-c8112a4e5190?q=80&w=2670&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover" alt="Road" />
                   </div>
                </div>
             </div>
