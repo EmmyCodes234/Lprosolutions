@@ -2,33 +2,43 @@ import React from 'react';
 
 const Terms: React.FC = () => {
     return (
-        <div className="w-full bg-[#f5f5f4] min-h-screen pt-32 pb-24 px-6">
-            <div className="max-w-3xl mx-auto">
-                <h1 className="text-4xl md:text-6xl font-bold text-stone-900 tracking-tighter mb-8">Terms of Service</h1>
-                <div className="prose prose-stone prose-lg">
-                    <p className="text-xl text-stone-600 mb-8 leading-relaxed">
-                        By accessing the L-Pro Solutions website, you agree to abide by the following terms and conditions.
+        <div className="w-full bg-[#fcfcfc] min-h-screen pt-32 pb-48 px-6">
+            <div className="absolute inset-0 bg-noise opacity-[0.01] pointer-events-none" />
+
+            <div className="max-w-4xl mx-auto relative z-10">
+                <div className="inline-block bg-stone-100 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-[0.2em] text-stone-950 mb-8 animate-revealUp">
+                    Service Protocols
+                </div>
+                <h1 className="text-5xl md:text-8xl font-display font-black text-stone-950 tracking-tighter mb-16 leading-[0.8] animate-revealUp animation-delay-100">
+                    Terms of <br />
+                    <span className="text-stone-300">Engagement.</span>
+                </h1>
+
+                <div className="prose prose-stone prose-lg max-w-none animate-revealUp animation-delay-200">
+                    <p className="text-xl text-stone-500 mb-12 leading-relaxed font-light italic border-l-4 border-accent pl-8">
+                        By accessing the L-Pro Solutions platform, you agree to abide by the following technical and legal protocols governing our professional services.
                     </p>
 
-                    <h2 className="text-2xl font-bold text-stone-900 mt-12 mb-4">1. Acceptance of Terms</h2>
-                    <p className="text-stone-600 mb-6">
-                        The services and content provided by L-Pro Solutions are subject to these Terms of Service. We reserve the right to update these terms at any time without prior notice.
-                    </p>
+                    <section className="space-y-6 mb-16">
+                        <h2 className="text-2xl font-display font-bold text-stone-900 uppercase tracking-tight">1. Acceptance of Protocols</h2>
+                        <p className="text-stone-500 leading-relaxed">
+                            The services and content provided by L-Pro Solutions are subject to these Terms of Engagement. We reserve the right to refine these standards as regional engineering codes and legal requirements evolve.
+                        </p>
+                    </section>
 
-                    <h2 className="text-2xl font-bold text-stone-900 mt-12 mb-4">2. Intellectual Property</h2>
-                    <p className="text-stone-600 mb-6">
-                        All content, logos, and materials on this website are the intellectual property of L-Pro Solutions unless otherwise stated. Unauthorized use is strictly prohibited.
-                    </p>
+                    <section className="space-y-6 mb-16">
+                        <h2 className="text-2xl font-display font-bold text-stone-900 uppercase tracking-tight">2. Intellectual Property</h2>
+                        <p className="text-stone-500 leading-relaxed">
+                            All architectural plans, technical frameworks, and methodologies on this platform are the intellectual property of L-Pro Solutions. Unauthorized reproduction or use in project execution is prohibited.
+                        </p>
+                    </section>
 
-                    <h2 className="text-2xl font-bold text-stone-900 mt-12 mb-4">3. Limitation of Liability</h2>
-                    <p className="text-stone-600 mb-6">
-                        L-Pro Solutions shall not be held liable for any damages arising out of the use or inability to use the materials on this website.
-                    </p>
-
-                    <h2 className="text-2xl font-bold text-stone-900 mt-12 mb-4">4. Governing Law</h2>
-                    <p className="text-stone-600 mb-6">
-                        These terms are governed by and construed in accordance with the laws of the Republic of Liberia.
-                    </p>
+                    <section className="space-y-6 mb-16">
+                        <h2 className="text-2xl font-display font-bold text-stone-900 uppercase tracking-tight">3. Governing Jurisdiction</h2>
+                        <p className="text-stone-500 leading-relaxed">
+                            These terms are governed by and construed in accordance with the laws of the Republic of Liberia, aligning with ECOWAS regional infrastructure directives.
+                        </p>
+                    </section>
                 </div>
             </div>
         </div>

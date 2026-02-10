@@ -1,54 +1,69 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Compass } from 'lucide-react';
 
 const Sitemap: React.FC = () => {
     const sections = [
         {
-            title: 'Main Navigation',
+            title: 'Primary Portals',
             links: [
-                { name: 'Home', path: '/' },
-                { name: 'Services', path: '/services' },
-                { name: 'Projects', path: '/projects' },
-                { name: 'About Us', path: '/about' },
-                { name: 'Contact', path: '/contact' }
+                { name: 'Home Identity', path: '/' },
+                { name: 'Service Portfolio', path: '/services' },
+                { name: 'Project Focal Points', path: '/projects' },
+                { name: 'Company Registry', path: '/about' },
+                { name: 'Consultation Portal', path: '/contact' }
             ]
         },
         {
-            title: 'Our Expertise',
+            title: 'Technical Verticals',
             links: [
-                { name: 'PMO Services', path: '/services' },
-                { name: 'Engineering', path: '/services' },
-                { name: 'Capacity Building', path: '/services' }
+                { name: 'PMO Framework', path: '/services' },
+                { name: 'Engineering Rigor', path: '/services' },
+                { name: 'Institutional Growth', path: '/services' }
             ]
         },
         {
-            title: 'Resources',
+            title: 'Strategic Intel',
             links: [
-                { name: 'Blog / Stories', path: '/blog' },
-                { name: 'FAQ', path: '/faq' },
-                { name: 'Privacy Policy', path: '/privacy' },
-                { name: 'Terms of Service', path: '/terms' }
+                { name: 'Executive Briefings', path: '/blog' },
+                { name: 'Governance Protocols', path: '/faq' },
+                { name: 'Privacy Standards', path: '/privacy' },
+                { name: 'Engagement Terms', path: '/terms' }
             ]
         }
     ];
 
     return (
-        <div className="w-full bg-[#f5f5f4] min-h-screen pt-32 pb-24 px-6">
-            <div className="max-w-4xl mx-auto">
-                <h1 className="text-4xl md:text-6xl font-bold text-stone-900 tracking-tighter mb-12">Sitemap</h1>
+        <div className="w-full bg-[#fcfcfc] min-h-screen pt-32 pb-48 px-6">
+            <div className="absolute inset-0 bg-noise opacity-[0.01] pointer-events-none" />
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div className="max-w-[1440px] mx-auto relative z-10">
+
+                <div className="max-w-4xl mb-24 md:mb-32">
+                    <div className="inline-block bg-accent px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-[0.2em] text-stone-950 mb-8 animate-revealUp">
+                        Platform Architecture
+                    </div>
+                    <h1 className="text-6xl md:text-[8rem] font-display font-black tracking-tighter text-stone-950 leading-[0.8] mb-12 animate-revealUp animation-delay-100">
+                        Site <br />
+                        <span className="text-stone-300">Index.</span>
+                    </h1>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-16 xl:gap-24 animate-revealUp animation-delay-200">
                     {sections.map((section, idx) => (
-                        <div key={idx}>
-                            <h2 className="text-xl font-bold text-stone-900 mb-6 pb-2 border-b border-stone-200">
-                                {section.title}
-                            </h2>
-                            <ul className="space-y-4">
+                        <div key={idx} className="group">
+                            <div className="flex items-center gap-3 mb-8 border-b border-stone-100 pb-4">
+                                <Compass size={18} className="text-accent" />
+                                <h2 className="text-xl font-display font-bold text-stone-900 tracking-tight">
+                                    {section.title}
+                                </h2>
+                            </div>
+                            <ul className="space-y-6">
                                 {section.links.map((link, lIdx) => (
                                     <li key={lIdx}>
-                                        <Link to={link.path} className="group flex items-center gap-2 text-stone-600 hover:text-stone-900 transition-colors">
-                                            {link.name} <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 transition-all -translate-x-2 group-hover:translate-x-0" />
+                                        <Link to={link.path} className="group/link flex items-center justify-between text-stone-500 hover:text-stone-950 transition-colors py-1">
+                                            <span className="text-lg font-light tracking-tight">{link.name}</span>
+                                            <ArrowRight size={16} className="text-accent opacity-0 group-hover/link:opacity-100 -translate-x-4 group-hover/link:translate-x-0 transition-all" />
                                         </Link>
                                     </li>
                                 ))}

@@ -5,80 +5,108 @@ import MagneticButton from './MagneticButton';
 
 const Footer: React.FC = () => {
     return (
-        <footer className="fixed bottom-0 left-0 w-full h-[500px] md:h-[450px] bg-black text-white z-0 flex items-center justify-center overflow-hidden">
+        <footer className="fixed bottom-0 left-0 w-full h-[600px] md:h-[500px] bg-stone-950 text-white z-0 overflow-hidden">
+            <div className="absolute inset-0 bg-noise opacity-[0.03] pointer-events-none" />
 
-            {/* Watermark */}
-            <div className="absolute -bottom-10 right-0 select-none pointer-events-none opacity-[0.03] z-0">
-                <span className="text-[12rem] md:text-[20rem] font-black leading-none tracking-tighter text-white whitespace-nowrap">
+            {/* Watermark Curtain */}
+            <div className="absolute -bottom-10 right-0 select-none pointer-events-none opacity-[0.05] z-0">
+                <span className="text-[15rem] md:text-[25rem] font-display font-black leading-none tracking-[-0.08em] text-white whitespace-nowrap italic">
                     L-PRO
                 </span>
             </div>
 
-            <div className="w-full max-w-[1440px] px-6 h-full flex flex-col relative z-10 pt-16 md:pt-24 pb-8">
+            <div className="w-full max-w-[1440px] mx-auto px-6 relative z-10 pt-24 pb-12">
 
-                {/* Top: CTA */}
-                <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-white/10 pb-12 mb-12 gap-8">
-                    <h2 className="text-4xl md:text-6xl font-bold tracking-tighter">
-                        Have a complex project?
-                    </h2>
-                    <MagneticButton strength={50}>
+                {/* Top: Strategic CTA */}
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-end border-b border-white/5 pb-20 mb-20 gap-12">
+                    <div className="max-w-2xl">
+                        <div className="text-accent text-[10px] font-black uppercase tracking-[0.4em] mb-6">Engagement Protocol</div>
+                        <h2 className="text-5xl md:text-7xl font-display font-black tracking-tighter leading-[0.9]">
+                            Have a complex <br />
+                            <span className="text-stone-600 italic">Engineering Gap?</span>
+                        </h2>
+                    </div>
+                    <MagneticButton strength={40}>
                         <Link
                             to="/contact"
-                            className="group flex items-center gap-3 bg-accent text-stone-900 px-8 py-4 rounded-full text-lg font-bold transition-transform hover:scale-105"
+                            className="group flex items-center gap-6 bg-white text-stone-950 px-10 py-5 rounded-full text-xs font-black uppercase tracking-[0.2em] transition-all hover:bg-accent shadow-2xl"
                         >
-                            Start Discussion <ArrowRight size={20} className="group-hover:-rotate-45 transition-transform duration-300" />
+                            Start Discussion <ArrowRight size={18} className="group-hover:-rotate-45 transition-transform duration-500" />
                         </Link>
                     </MagneticButton>
                 </div>
 
-                {/* Middle: Grid */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-12 flex-grow">
-                    {/* Column 1 */}
-                    <div>
-                        <h4 className="text-stone-500 font-mono text-xs uppercase tracking-widest mb-6">Headquarters</h4>
-                        <p className="text-lg leading-relaxed text-stone-300">
-                            123 Tubman Boulevard<br />
-                            Sinkor, Monrovia<br />
-                            Liberia
+                {/* Middle: Architectural Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-16 mb-32">
+
+                    {/* Brand Meta */}
+                    <div className="lg:col-span-2">
+                        <div className="flex items-center gap-2 mb-8">
+                            <div className="w-8 h-8 bg-accent rounded-full flex items-center justify-center text-stone-950 font-black text-xs">LP</div>
+                            <span className="text-xl font-display font-black tracking-tighter">L-PRO SOLUTIONS</span>
+                        </div>
+                        <p className="text-stone-500 max-w-xs leading-relaxed font-light">
+                            West Africa's definitive engineering consultancy and project management office. Globally certified, locally empowered.
                         </p>
                     </div>
 
-                    {/* Column 2 */}
-                    <div>
-                        <h4 className="text-stone-500 font-mono text-xs uppercase tracking-widest mb-6">Contact</h4>
-                        <p className="text-lg leading-relaxed text-stone-300">
-                            <a href="tel:+231770000000" className="hover:text-accent transition-colors">+231 77 000 0000</a><br />
-                            <a href="mailto:projects@l-pro.com" className="hover:text-accent transition-colors">projects@l-pro.com</a>
-                        </p>
-                    </div>
-
-                    {/* Column 3 */}
-                    <div>
-                        <h4 className="text-stone-500 font-mono text-xs uppercase tracking-widest mb-6">Socials</h4>
-                        <div className="flex flex-col gap-2 text-lg text-stone-300">
-                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">LinkedIn</a>
-                            <a href="https://x.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors flex items-center gap-2">
-                                <span>Twitter / X</span>
-                            </a>
-                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">Instagram</a>
+                    {/* Presence */}
+                    <div className="space-y-8">
+                        <h4 className="text-stone-400 font-black text-[10px] uppercase tracking-[0.3em]">Presence</h4>
+                        <div className="space-y-4">
+                            <div className="group hidden md:block">
+                                <p className="text-xs font-black text-stone-300 mb-1 group-hover:text-accent transition-colors">Monrovia HQ</p>
+                                <p className="text-stone-500 text-sm">Tubman Boulevard, Sinkor</p>
+                            </div>
+                            <div className="group">
+                                <p className="text-xs font-black text-stone-300 mb-1 group-hover:text-accent transition-colors">Digital Channels</p>
+                                <a href="mailto:partnerships@l-pro.com" className="text-stone-500 text-sm block hover:text-white transition-colors">partnerships@l-pro.com</a>
+                                <a href="tel:+231770000000" className="text-stone-500 text-sm block">+231 77 000 0000</a>
+                            </div>
                         </div>
                     </div>
 
-                    {/* Column 4 */}
-                    <div className="hidden md:block">
-                        <h4 className="text-stone-500 font-mono text-xs uppercase tracking-widest mb-6">Legal</h4>
-                        <div className="flex flex-col gap-2 text-sm text-stone-400">
+                    {/* Socials & Legal */}
+                    <div className="space-y-8">
+                        <h4 className="text-stone-400 font-black text-[10px] uppercase tracking-[0.3em]">Strategic Links</h4>
+                        <div className="flex flex-col gap-3 text-stone-500 text-sm font-bold">
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
+                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a>
+                            <Link to="/about" className="hover:text-white transition-colors">Company Registry</Link>
+                            <Link to="/projects" className="hover:text-white transition-colors">Project Portfolio</Link>
+                        </div>
+                    </div>
+
+                    {/* Legal Block */}
+                    <div className="space-y-8">
+                        <h4 className="text-stone-400 font-black text-[10px] uppercase tracking-[0.3em]">Protocols</h4>
+                        <div className="flex flex-col gap-3 text-stone-500 text-sm">
                             <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
                             <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
-                            <Link to="/sitemap" className="hover:text-white transition-colors">Sitemap</Link>
+                            <Link to="/sitemap" className="hover:text-white transition-colors">Site Index</Link>
                         </div>
                     </div>
+
                 </div>
 
-                {/* Bottom: Copyright */}
-                <div className="pt-8 border-t border-white/5 flex justify-between items-center text-stone-500 text-sm">
-                    <p>© 2026 L-Pro Solutions. Engineering the Future.</p>
-                    <p className="hidden md:block">Monrovia • Freetown • Accra</p>
+                {/* Bottom: Industry Compliance */}
+                <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
+                    <div className="flex items-center gap-4">
+                        <div className="h-px w-12 bg-white/10" />
+                        <p className="text-[10px] font-black uppercase tracking-[0.3em] text-stone-600">
+                            © 2026 L-Pro Solutions <span className="mx-2">•</span> Engineering Excellence
+                        </p>
+                    </div>
+                    <div className="flex items-center gap-8">
+                        <div className="flex items-center gap-2">
+                            <div className="w-2 h-2 bg-accent rounded-full" />
+                            <span className="text-[10px] font-black uppercase tracking-widest text-stone-400">ISO 9001:2015</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <div className="w-2 h-2 bg-stone-700 rounded-full" />
+                            <span className="text-[10px] font-black uppercase tracking-widest text-stone-400">PMI CHARTERED</span>
+                        </div>
+                    </div>
                 </div>
 
             </div>

@@ -70,7 +70,7 @@ const App: React.FC = () => {
         2. Footer: Fixed, bottom-0, z-0.
       */}
 
-      <div className="relative z-10 bg-[#f5f5f4] mb-[500px] md:mb-[450px] shadow-2xl rounded-b-[2.5rem] flex flex-col min-h-screen">
+      <div className="relative z-10 bg-stone-50 mb-[600px] md:mb-[500px] shadow-2xl rounded-b-[5rem] flex flex-col min-h-screen">
         <Navbar />
 
         <main className="flex-grow">
