@@ -21,7 +21,7 @@ const Projects: React.FC = () => {
          <section className="max-w-[1440px] mx-auto px-6">
 
             {/* Project 1 - Stacking Card */}
-            <div className="sticky top-20 md:top-24 mb-8 md:mb-12 lg:mb-24 shadow-2xl rounded-[2.5rem] md:rounded-[3rem] overflow-hidden bg-white z-10">
+            <div className="mb-8 md:mb-12 lg:mb-24 shadow-2xl rounded-[2.5rem] md:rounded-[3rem] overflow-hidden bg-white z-10">
                <div className="grid grid-cols-1 lg:grid-cols-2">
                   <div className="h-[250px] md:h-[400px] lg:h-[600px] relative">
                      <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=2670&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover" alt="Building" />
@@ -46,7 +46,7 @@ const Projects: React.FC = () => {
             </div>
 
             {/* Project 2 - Stacking Card */}
-            <div className="sticky top-24 md:top-32 mb-8 md:mb-12 lg:mb-24 shadow-2xl rounded-[2.5rem] md:rounded-[3rem] overflow-hidden bg-white z-20">
+            <div className="mb-8 md:mb-12 lg:mb-24 shadow-2xl rounded-[2.5rem] md:rounded-[3rem] overflow-hidden bg-white z-20">
                <div className="grid grid-cols-1 lg:grid-cols-2">
                   <div className="flex flex-col justify-center p-8 md:p-12 lg:p-20 bg-white order-2 lg:order-1">
                      <span className="text-accent font-bold uppercase tracking-widest text-xs mb-4 block">Public Sector / Civil</span>
@@ -71,7 +71,7 @@ const Projects: React.FC = () => {
             </div>
 
             {/* Project 3 - Stacking Card */}
-            <div className="sticky top-28 md:top-40 mb-8 md:mb-12 lg:mb-24 shadow-2xl rounded-[2.5rem] md:rounded-[3rem] overflow-hidden bg-white z-30">
+            <div className="mb-8 md:mb-12 lg:mb-24 shadow-2xl rounded-[2.5rem] md:rounded-[3rem] overflow-hidden bg-white z-30">
                <div className="grid grid-cols-1 lg:grid-cols-2">
                   <div className="h-[250px] md:h-[400px] lg:h-[600px] relative">
                      <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2670&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover" alt="Training" />
