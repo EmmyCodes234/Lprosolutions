@@ -210,9 +210,9 @@ const Navbar: React.FC = () => {
                         to={item.path}
                         onClick={() => setIsOpen(false)}
                         onMouseEnter={() => setActiveMenuId(item.id)}
-                        className={`block text-3xl md:text-4xl lg:text-[2.5rem] font-medium transition-all duration-300 px-4 md:px-6 py-2 md:py-3 rounded-full ${activeMenuId === item.id
-                          ? 'bg-stone-900 text-white pl-6 md:pl-8'
-                          : 'text-stone-900 hover:text-stone-600'
+                        className={`block text-4xl md:text-5xl lg:text-[3.5rem] font-display font-bold transition-all duration-500 px-4 md:px-8 py-2 md:py-4 rounded-full tracking-tighter ${activeMenuId === item.id
+                          ? 'bg-stone-900 text-white shadow-2xl pl-10'
+                          : 'text-stone-900 hover:text-stone-400'
                           }`}
                       >
                         {item.label}
@@ -220,9 +220,9 @@ const Navbar: React.FC = () => {
                     </li>
                   ))}
                   {/* Additional small links */}
-                  <li className="pt-8 pl-4 md:pl-6 space-y-3">
-                    <Link to="/faq" onClick={() => setIsOpen(false)} className="block text-stone-500 hover:text-stone-900 font-medium text-lg">Help Center / FAQ</Link>
-                    <Link to="/blog" onClick={() => setIsOpen(false)} className="block text-stone-500 hover:text-stone-900 font-medium text-lg">Our Story & Insights</Link>
+                  <li className="pt-8 pl-8 space-y-4 border-l border-stone-200 ml-4">
+                    <Link to="/faq" onClick={() => setIsOpen(false)} className="block text-stone-400 hover:text-stone-900 font-bold text-xs uppercase tracking-[0.2em]">Help Center / FAQ</Link>
+                    <Link to="/blog" onClick={() => setIsOpen(false)} className="block text-stone-400 hover:text-stone-900 font-bold text-xs uppercase tracking-[0.2em]">Story & Insights</Link>
                   </li>
                 </ul>
               </div>
