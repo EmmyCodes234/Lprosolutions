@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Phone, MapPin, Clock } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, ArrowRight, MessageSquare, Globe, ArrowUpRight } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
 
 const Contact: React.FC = () => {
@@ -43,80 +43,159 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div className="w-full bg-[#f5f5f4] min-h-screen">
-      <div className="max-w-[1440px] mx-auto px-4 md:px-6 py-12 md:py-24 pt-24 md:pt-32">
+    <div className="w-full bg-[#fcfcfc] min-h-screen overflow-hidden">
+      <div className="absolute inset-0 bg-noise opacity-[0.015] pointer-events-none" />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 bg-white rounded-[2.5rem] md:rounded-[3rem] overflow-hidden shadow-sm">
+      {/* Hero Narrative Section */}
+      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6">
+        <div className="max-w-[1440px] mx-auto">
+          <div className="inline-block bg-accent px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-[0.2em] text-stone-950 mb-8 animate-revealUp">
+            Connect With L-Pro
+          </div>
+          <h1 className="text-6xl md:text-9xl font-display font-black tracking-tighter text-stone-950 leading-[0.85] mb-12 animate-revealUp animation-delay-100">
+            Let's Define <br />
+            <span className="text-stone-300">The Horizon.</span>
+          </h1>
+          <p className="text-xl md:text-2xl text-stone-500 max-w-2xl font-light leading-relaxed animate-revealUp animation-delay-200">
+            Whether you're launching a national infrastructure project or seeking technical advisory, our engineering partners are ready to engage.
+          </p>
+        </div>
+      </section>
 
-          {/* Form Side */}
-          <div className="p-8 md:p-16 order-2 lg:order-1 relative">
+      <div className="max-w-[1440px] mx-auto px-6 pb-32">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 xl:gap-24 items-start">
+
+          {/* Information & Presence Corridor (Left) */}
+          <div className="lg:col-span-5 space-y-16 animate-revealUp animation-delay-300">
+
+            {/* Presence Cards */}
+            <div className="space-y-12">
+              <div>
+                <h3 className="text-xs font-black uppercase tracking-[0.3em] text-stone-400 mb-8">Regional Headquarters</h3>
+                <div className="group cursor-pointer">
+                  <p className="text-2xl font-display font-bold text-stone-900 mb-2 group-hover:text-accent transition-colors">Sinkor, Monrovia</p>
+                  <p className="text-stone-500 text-lg leading-relaxed">
+                    123 Tubman Boulevard,<br />
+                    Lower Sinkor, Liberia
+                  </p>
+                  <div className="mt-4 flex items-center gap-2 text-stone-400 group-hover:text-stone-900 transition-colors">
+                    <span className="text-xs font-black uppercase tracking-widest">View Map</span>
+                    <ArrowUpRight size={14} />
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                  <h3 className="text-xs font-black uppercase tracking-[0.3em] text-stone-400 mb-6">Direct Channels</h3>
+                  <div className="space-y-4">
+                    <a href="mailto:partnerships@l-pro.com" className="block text-stone-900 hover:text-accent font-bold text-lg transition-colors">partnerships@l-pro.com</a>
+                    <a href="tel:+231770000000" className="block text-stone-900 hover:text-accent font-bold text-lg transition-colors">+231 77 000 0000</a>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-xs font-black uppercase tracking-[0.3em] text-stone-400 mb-6">Operational Hours</h3>
+                  <p className="text-stone-900 font-bold block">Monday — Friday</p>
+                  <p className="text-stone-500">08:00 — 18:00 GMT</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Immersive Map Visual */}
+            <div className="relative aspect-video rounded-[2.5rem] overflow-hidden group shadow-2xl">
+              <img
+                src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=1400&auto=format&fit=crop"
+                className="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-1000 scale-105 group-hover:scale-100"
+                alt="Monrovia Headquarters"
+              />
+              <div className="absolute inset-0 bg-stone-950/20 group-hover:bg-transparent transition-colors duration-1000" />
+              <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between pointer-events-none">
+                <div className="bg-white/90 backdrop-blur-md px-6 py-3 rounded-2xl shadow-xl flex items-center gap-3">
+                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                  <span className="text-stone-900 text-xs font-black uppercase tracking-widest">Office Open</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Consultation Portal (Right) */}
+          <div className="lg:col-span-7 bg-white rounded-[4rem] p-8 md:p-16 shadow-[0_40px_100px_rgba(0,0,0,0.03)] border border-stone-100 animate-revealUp animation-delay-400">
             {formState === 'success' ? (
-              <div className="h-full flex flex-col justify-center items-center text-center animate-reveal-up">
-                <div className="w-20 h-20 bg-accent rounded-full flex items-center justify-center text-stone-900 mb-6">
+              <div className="py-24 flex flex-col items-center text-center">
+                <div className="w-24 h-24 bg-stone-950 rounded-full flex items-center justify-center text-accent mb-8 shadow-2xl">
                   <Mail size={40} />
                 </div>
-                <h2 className="text-3xl font-bold mb-4">Message Sent!</h2>
-                <p className="text-stone-500 max-w-sm">Thank you for reaching out. An expert from our team will contact you within 24 hours.</p>
+                <h2 className="text-4xl md:text-5xl font-display font-black text-stone-900 mb-6 tracking-tight">Communication Logged.</h2>
+                <p className="text-stone-500 text-lg max-w-sm mb-12">An L-Pro technical advisor will review your inquiry and respond within 24 operational hours.</p>
                 <button
                   onClick={() => setFormState('idle')}
-                  className="mt-8 text-stone-900 font-bold border-b border-stone-900 pb-1"
+                  className="bg-stone-950 text-white px-10 py-4 rounded-full font-bold flex items-center gap-3 hover:bg-stone-800 transition-all group"
                 >
-                  Send another message
+                  Send New Message <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
             ) : (
-              <>
-                <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-stone-900 mb-2">Let’s Build Something Lasting.</h2>
-                <p className="text-stone-500 mb-8 md:mb-10 text-sm md:text-base">Whether you have an RFP ready or are just exploring the feasibility of a new idea, our team is ready to listen.</p>
+              <div className="space-y-12">
+                <div>
+                  <h2 className="text-3xl md:text-5xl font-display font-bold text-stone-900 mb-6 tracking-tight">Project Consultation</h2>
+                  <p className="text-stone-500 text-lg leading-relaxed">
+                    Initiate your inquiry below. For urgent procurement or emergency infrastructure needs, please use our direct global line.
+                  </p>
+                </div>
 
                 <form
                   name="contact"
                   method="POST"
                   data-netlify="true"
                   onSubmit={handleSubmit}
-                  className="space-y-4 md:space-y-6"
+                  className="space-y-8"
                 >
                   <input type="hidden" name="form-name" value="contact" />
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                    <div>
-                      <label className="block text-sm font-semibold text-stone-700 mb-2">First Name</label>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="group">
+                      <label className="block text-[10px] font-black uppercase tracking-[0.2em] text-stone-400 mb-2 group-focus-within:text-stone-900 transition-colors">Identity: First Name</label>
                       <input
                         required
                         type="text"
+                        placeholder="John"
                         value={formData.firstName}
                         onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
-                        className="w-full bg-[#f5f5f4] rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-stone-200"
+                        className="w-full bg-stone-50 border-b-2 border-stone-100 px-6 py-4 outline-none focus:border-stone-900 transition-colors font-bold text-stone-900 placeholder:text-stone-300 placeholder:font-normal"
                       />
                     </div>
-                    <div>
-                      <label className="block text-sm font-semibold text-stone-700 mb-2">Last Name</label>
+                    <div className="group">
+                      <label className="block text-[10px] font-black uppercase tracking-[0.2em] text-stone-400 mb-2 group-focus-within:text-stone-900 transition-colors">Identity: Last Name</label>
                       <input
                         required
                         type="text"
+                        placeholder="Doe"
                         value={formData.lastName}
                         onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
-                        className="w-full bg-[#f5f5f4] rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-stone-200"
+                        className="w-full bg-stone-50 border-b-2 border-stone-100 px-6 py-4 outline-none focus:border-stone-900 transition-colors font-bold text-stone-900 placeholder:text-stone-300 placeholder:font-normal"
                       />
                     </div>
                   </div>
 
-                  <div>
-                    <label className="block text-sm font-semibold text-stone-700 mb-2">Email</label>
+                  <div className="group">
+                    <label className="block text-[10px] font-black uppercase tracking-[0.2em] text-stone-400 mb-2 group-focus-within:text-stone-900 transition-colors">Electronic Mail</label>
                     <input
                       required
                       type="email"
+                      placeholder="email@organization.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full bg-[#f5f5f4] rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-stone-200"
+                      className="w-full bg-stone-50 border-b-2 border-stone-100 px-6 py-4 outline-none focus:border-stone-900 transition-colors font-bold text-stone-900 placeholder:text-stone-300 placeholder:font-normal"
                     />
                   </div>
 
-                  <div>
-                    <label className="block text-sm font-semibold text-stone-700 mb-2">Service of Interest</label>
+                  <div className="group">
+                    <label className="block text-[10px] font-black uppercase tracking-[0.2em] text-stone-400 mb-2 group-focus-within:text-stone-900 transition-colors">Strategic Area</label>
                     <select
                       value={formData.service}
                       onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                      className="w-full bg-[#f5f5f4] rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-stone-200 text-stone-500"
+                      className="w-full bg-stone-50 border-b-2 border-stone-100 px-6 py-4 outline-none focus:border-stone-900 transition-colors font-bold text-stone-900 appearance-none cursor-pointer"
                     >
                       <option>PMO Services</option>
                       <option>Engineering & Construction</option>
@@ -125,86 +204,36 @@ const Contact: React.FC = () => {
                     </select>
                   </div>
 
-                  <div>
-                    <label className="block text-sm font-semibold text-stone-700 mb-2">Message</label>
+                  <div className="group">
+                    <label className="block text-[10px] font-black uppercase tracking-[0.2em] text-stone-400 mb-2 group-focus-within:text-stone-900 transition-colors">Inquiry Narrative</label>
                     <textarea
                       required
                       rows={4}
+                      placeholder="Briefly describe your project goals or technical requirements..."
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full bg-[#f5f5f4] rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-stone-200"
+                      className="w-full bg-stone-50 border-b-2 border-stone-100 px-6 py-4 outline-none focus:border-stone-900 transition-colors font-bold text-stone-900 placeholder:text-stone-300 placeholder:font-normal resize-none"
                     ></textarea>
                   </div>
 
                   <button
                     disabled={formState === 'submitting'}
-                    className="w-full bg-stone-900 text-white font-bold py-4 rounded-full hover:bg-stone-800 transition-colors disabled:opacity-50"
+                    className="w-full bg-stone-950 text-white font-black uppercase tracking-[0.2em] text-xs py-6 rounded-full hover:bg-stone-800 transition-all shadow-[0_20px_40px_rgba(0,0,0,0.1)] hover:shadow-[0_25px_50px_rgba(0,0,0,0.15)] disabled:opacity-50 flex items-center justify-center gap-4 group"
                   >
-                    {formState === 'submitting' ? 'Sending...' : 'Send Message'}
+                    {formState === 'submitting' ? (
+                      'Processing Inquiry...'
+                    ) : (
+                      <>
+                        Initiate Consultation
+                        <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                      </>
+                    )}
                   </button>
                 </form>
-              </>
+              </div>
             )}
           </div>
 
-          {/* Info Side */}
-          <div className="bg-stone-900 p-8 md:p-16 text-white order-1 lg:order-2 flex flex-col justify-between">
-            <div>
-              <h3 className="text-xl md:text-2xl font-bold mb-6">Contact Information</h3>
-              <ul className="space-y-6 text-sm md:text-base">
-                <li className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
-                    <MapPin size={20} />
-                  </div>
-                  <div>
-                    <p className="font-semibold">Headquarters</p>
-                    <p className="text-stone-400">123 Tubman Boulevard,<br />Sinkor, Monrovia, Liberia</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
-                    <Phone size={20} />
-                  </div>
-                  <div>
-                    <p className="font-semibold">Global Line</p>
-                    <p className="text-stone-400">+231 77 000 0000</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
-                    <Mail size={20} />
-                  </div>
-                  <div>
-                    <p className="font-semibold">Email</p>
-                    <p className="text-stone-400">partnerships@l-pro.com</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
-                    <Clock size={20} />
-                  </div>
-                  <div>
-                    <p className="font-semibold">Office Hours</p>
-                    <p className="text-stone-400">Mon - Fri, 8:00 AM – 6:00 PM GMT</p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-
-            <div className="mt-12">
-              <a
-                href="https://www.google.com/maps/search/Tubman+Boulevard,+Sinkor,+Monrovia,+Liberia"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="h-48 w-full rounded-3xl bg-white/5 overflow-hidden relative block group"
-              >
-                <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=1400&auto=format&fit=crop" className="w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity" alt="Map" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="bg-white text-stone-900 px-6 py-2 rounded-full text-xs font-bold shadow-xl group-hover:scale-105 transition-transform">View on Google Maps</span>
-                </div>
-              </a>
-            </div>
-          </div>
         </div>
       </div>
     </div>
