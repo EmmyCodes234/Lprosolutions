@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import MagneticButton from '../components/MagneticButton';
 
 const About: React.FC = () => {
   return (
@@ -96,12 +97,14 @@ const About: React.FC = () => {
           <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tight mb-10">
             Let’s build the future <br /> of West Africa together.
           </h2>
-          <Link
-            to="/contact"
-            className="inline-flex h-20 items-center justify-center bg-stone-950 text-white px-12 rounded-full font-bold text-lg transition-transform hover:scale-105 active:scale-95 shadow-2xl"
-          >
-            Start a Conversation
-          </Link>
+          <MagneticButton>
+            <Link
+              to="/contact"
+              className="inline-flex h-20 items-center justify-center bg-stone-950 text-white px-12 rounded-full font-bold text-lg transition-transform hover:scale-105 active:scale-95 shadow-2xl"
+            >
+              Start a Conversation
+            </Link>
+          </MagneticButton>
         </div>
       </section>
     </div>

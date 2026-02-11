@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
+import LiquidImage from '../components/LiquidImage';
 
 const galleryImages = [
    '/web images/1001836387.jpg',
@@ -63,15 +64,13 @@ const Projects: React.FC = () => {
                      style={{ transitionDelay: `${(index % 3) * 100}ms` }}
                      onClick={() => setSelectedImage(src)}
                   >
-                     <img
-                        src={src}
-                        alt={`Project Gallery Image ${index + 1}`}
-                        className="w-full h-full object-cover grayscale transition-all duration-700 ease-in-out group-hover:grayscale-0 group-hover:scale-105"
-                        loading="lazy"
-                        decoding="async"
+                     <LiquidImage
+                        image1={src}
+                        image2={galleryImages[(index + 1) % galleryImages.length]}
+                        className="w-full h-full grayscale group-hover:grayscale-0 transition-all duration-700"
                      />
-                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500" />
-                     <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500 pointer-events-none" />
+                     <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                         <div className="bg-white/90 backdrop-blur-md p-3 rounded-full shadow-lg">
                            <ArrowUpRight size={20} className="text-stone-900" />
                         </div>

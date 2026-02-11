@@ -187,9 +187,11 @@ const Home: React.FC = () => {
                   className="w-full h-20 pl-8 pr-48 rounded-full bg-white/5 border border-white/10 outline-none text-white placeholder-stone-500 focus:border-accent/50 focus:bg-white/10 transition-all font-light"
                 />
                 <div className="absolute right-2 top-2 bottom-2">
-                  <button type="submit" className="h-full bg-white text-stone-900 px-10 rounded-full font-bold hover:bg-accent hover:text-white transition-all active:scale-95 shadow-xl">
-                    Subscribe
-                  </button>
+                  <MagneticButton className="h-full">
+                    <button type="submit" className="h-full bg-white text-stone-900 px-10 rounded-full font-bold hover:bg-accent hover:text-white transition-all active:scale-95 shadow-xl">
+                      Subscribe
+                    </button>
+                  </MagneticButton>
                 </div>
               </form>
             </div>

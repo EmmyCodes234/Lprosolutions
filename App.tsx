@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import TrustStrip from './components/TrustStrip';
@@ -37,6 +37,7 @@ const App: React.FC = () => {
 
   const [footerHeight, setFooterHeight] = React.useState(0);
   const footerRef = React.useRef<HTMLDivElement>(null);
+  const contentRef = React.useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Initialize Lenis Smooth Scroll
@@ -47,9 +48,23 @@ const App: React.FC = () => {
         direction: 'vertical',
         gestureDirection: 'vertical',
         smooth: true,
-        mouseMultiplier: 1,
         smoothTouch: false,
-        touchMultiplier: 2,
+      });
+
+      let currentSkew = 0;
+
+      // Handle Scroll Events for Velocity Skew
+      lenis.on('scroll', (e: any) => {
+        if (!contentRef.current) return;
+
+        // Calculate Skew based on velocity (capped at 7 degrees)
+        const targetSkew = Math.max(-7, Math.min(7, e.velocity * 0.1));
+
+        // Smooth interpolation for the skew
+        currentSkew += (targetSkew - currentSkew) * 0.1;
+
+        // Apply transform to the main content holder
+        contentRef.current.style.transform = `skewY(${currentSkew}deg)`;
       });
 
       function raf(time: number) {
@@ -74,9 +89,9 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <Router>
-      <Preloader />
+    <>
       <ScrollToTop />
+      <Preloader />
       <ScrollToTopButton />
 
       {/* Global Noise Overlay */}
@@ -84,7 +99,8 @@ const App: React.FC = () => {
 
       {/* Main Content Wrapper - Acts as the 'curtain' */}
       <div
-        className="relative z-10 bg-stone-50 rounded-b-[3rem] md:rounded-b-[5rem] flex flex-col min-h-screen shadow-2xl transition-all duration-300 ease-out"
+        ref={contentRef}
+        className="relative z-10 bg-stone-50 rounded-b-[3rem] md:rounded-b-[5rem] flex flex-col min-h-screen shadow-2xl transition-all duration-300 ease-out will-change-transform"
         style={{ marginBottom: `${footerHeight}px` }}
       >
         <Navbar />
@@ -100,7 +116,6 @@ const App: React.FC = () => {
             <Route path="/terms" element={<Terms />} />
             <Route path="/sitemap" element={<Sitemap />} />
             <Route path="/faq" element={<FAQ />} />
-
             <Route path="/founder" element={<Founder />} />
           </Routes>
         </main>
@@ -118,8 +133,7 @@ const App: React.FC = () => {
 
       <CookieConsent />
       <NewsletterPopup />
-
-    </Router>
+    </>
   );
 };
 

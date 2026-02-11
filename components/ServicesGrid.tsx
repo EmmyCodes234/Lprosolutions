@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { HardHat, ShieldCheck, GraduationCap, ArrowRight } from 'lucide-react';
+import TiltCard from './TiltCard';
 
 const ServicesGrid: React.FC = () => {
   return (
@@ -21,65 +22,71 @@ const ServicesGrid: React.FC = () => {
 
           {/* Card 1: Engineering */}
           <Link to="/services" className="group block h-full">
-            <div className="h-full bg-white/5 border border-white/10 p-10 rounded-[2rem] transition-all duration-500 ease-out hover:-translate-y-2 hover:bg-white/[0.08] hover:border-accent relative overflow-hidden flex flex-col">
+            <TiltCard className="h-full">
+              <div className="h-full bg-white/5 border border-white/10 p-10 rounded-[2rem] transition-all duration-500 ease-out hover:bg-white/[0.08] hover:border-accent relative overflow-hidden flex flex-col" style={{ transformStyle: 'preserve-3d' }}>
 
-              <div className="w-16 h-16 bg-stone-800 rounded-2xl flex items-center justify-center mb-8 text-white group-hover:text-accent transition-colors duration-300">
-                <HardHat size={32} strokeWidth={1.5} />
+                <div className="w-16 h-16 bg-stone-800 rounded-2xl flex items-center justify-center mb-8 text-white group-hover:text-accent transition-colors duration-300 shadow-xl" style={{ transform: 'translateZ(40px)' }}>
+                  <HardHat size={32} strokeWidth={1.5} />
+                </div>
+
+                <h3 className="text-2xl font-bold mb-4" style={{ transform: 'translateZ(30px)' }}>Engineering</h3>
+                <p className="text-stone-400 leading-relaxed mb-8 flex-grow" style={{ transform: 'translateZ(20px)' }}>
+                  Precision execution for complex infrastructure challenges. We handle everything from civil works to high-rise structures.
+                </p>
+
+                <div className="flex items-center gap-2 text-sm font-bold text-stone-500 group-hover:text-accent transition-colors duration-300" style={{ transform: 'translateZ(15px)' }}>
+                  <span>Learn More</span>
+                  <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
+                </div>
+
               </div>
-
-              <h3 className="text-2xl font-bold mb-4">Engineering</h3>
-              <p className="text-stone-400 leading-relaxed mb-8 flex-grow">
-                Precision execution for complex infrastructure challenges. We handle everything from civil works to high-rise structures.
-              </p>
-
-              <div className="flex items-center gap-2 text-sm font-bold text-stone-500 group-hover:text-accent transition-colors duration-300">
-                <span>Learn More</span>
-                <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
-              </div>
-
-            </div>
+            </TiltCard>
           </Link>
 
           {/* Card 2: Governance */}
           <Link to="/services" className="group block h-full">
-            <div className="h-full bg-white/5 border border-white/10 p-10 rounded-[2rem] transition-all duration-500 ease-out hover:-translate-y-2 hover:bg-white/[0.08] hover:border-accent relative overflow-hidden flex flex-col">
+            <TiltCard className="h-full">
+              <div className="h-full bg-white/5 border border-white/10 p-10 rounded-[2rem] transition-all duration-500 ease-out hover:bg-white/[0.08] hover:border-accent relative overflow-hidden flex flex-col" style={{ transformStyle: 'preserve-3d' }}>
 
-              <div className="w-16 h-16 bg-stone-800 rounded-2xl flex items-center justify-center mb-8 text-white group-hover:text-accent transition-colors duration-300">
-                <ShieldCheck size={32} strokeWidth={1.5} />
+                <div className="w-16 h-16 bg-stone-800 rounded-2xl flex items-center justify-center mb-8 text-white group-hover:text-accent transition-colors duration-300 shadow-xl" style={{ transform: 'translateZ(40px)' }}>
+                  <ShieldCheck size={32} strokeWidth={1.5} />
+                </div>
+
+                <h3 className="text-2xl font-bold mb-4" style={{ transform: 'translateZ(30px)' }}>Governance</h3>
+                <p className="text-stone-400 leading-relaxed mb-8 flex-grow" style={{ transform: 'translateZ(20px)' }}>
+                  Rigorous PMO standards to ensure transparency and efficiency. We eliminate waste and ensure regulatory compliance.
+                </p>
+
+                <div className="flex items-center gap-2 text-sm font-bold text-stone-500 group-hover:text-accent transition-colors duration-300" style={{ transform: 'translateZ(15px)' }}>
+                  <span>Learn More</span>
+                  <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
+                </div>
+
               </div>
-
-              <h3 className="text-2xl font-bold mb-4">Governance</h3>
-              <p className="text-stone-400 leading-relaxed mb-8 flex-grow">
-                Rigorous PMO standards to ensure transparency and efficiency. We eliminate waste and ensure regulatory compliance.
-              </p>
-
-              <div className="flex items-center gap-2 text-sm font-bold text-stone-500 group-hover:text-accent transition-colors duration-300">
-                <span>Learn More</span>
-                <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
-              </div>
-
-            </div>
+            </TiltCard>
           </Link>
 
           {/* Card 3: Capacity */}
           <Link to="/services" className="group block h-full">
-            <div className="h-full bg-white/5 border border-white/10 p-10 rounded-[2rem] transition-all duration-500 ease-out hover:-translate-y-2 hover:bg-white/[0.08] hover:border-accent relative overflow-hidden flex flex-col">
+            <TiltCard className="h-full">
+              <div className="h-full bg-white/5 border border-white/10 p-10 rounded-[2rem] transition-all duration-500 ease-out hover:bg-white/[0.08] hover:border-accent relative overflow-hidden flex flex-col" style={{ transformStyle: 'preserve-3d' }}>
 
-              <div className="w-16 h-16 bg-stone-800 rounded-2xl flex items-center justify-center mb-8 text-white group-hover:text-accent transition-colors duration-300">
-                <GraduationCap size={32} strokeWidth={1.5} />
+                <div className="w-16 h-16 bg-stone-800 rounded-2xl flex items-center justify-center mb-8 text-white group-hover:text-accent transition-colors duration-300 shadow-xl" style={{ transform: 'translateZ(40px)' }}>
+                  <GraduationCap size={32} strokeWidth={1.5} />
+                </div>
+
+                <h3 className="text-2xl font-bold mb-4" style={{ transform: 'translateZ(30px)' }}>Capacity</h3>
+                <p className="text-stone-400 leading-relaxed mb-8 flex-grow" style={{ transform: 'translateZ(20px)' }}>
+                  Training the next generation of African builders. We leave behind more than just buildings; we leave skills.
+                </p>
+
+                <div className="flex items-center gap-2 text-sm font-bold text-stone-500 group-hover:text-accent transition-colors duration-300" style={{ transform: 'translateZ(15px)' }}>
+                  <span>Learn More</span>
+                  <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
+                </div>
+
               </div>
-
-              <h3 className="text-2xl font-bold mb-4">Capacity</h3>
-              <p className="text-stone-400 leading-relaxed mb-8 flex-grow">
-                Training the next generation of African builders. We leave behind more than just buildings; we leave skills.
-              </p>
-
-              <div className="flex items-center gap-2 text-sm font-bold text-stone-500 group-hover:text-accent transition-colors duration-300">
-                <span>Learn More</span>
-                <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
-              </div>
-
-            </div>
+            </TiltCard>
           </Link>
 
         </div>

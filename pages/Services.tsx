@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ScrambleText from '../components/ScrambleText';
+import TiltCard from '../components/TiltCard';
 
 const services = [
   {
@@ -134,47 +135,52 @@ const Services: React.FC = () => {
       <section className="max-w-[1440px] mx-auto px-6 py-24 md:py-32">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredServices.map((service, idx) => (
-            <div
-              key={service.id}
-              className="group relative bg-white rounded-[3rem] p-4 border border-stone-100 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 flex flex-col h-full"
-              style={{ animationDelay: `${idx * 0.1}s` }}
-            >
-              {/* Media Container */}
-              <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden mb-8">
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-stone-900/10 group-hover:bg-transparent transition-colors duration-500" />
-                <div className="absolute bottom-4 left-4 right-4 bg-white/20 backdrop-blur-md border border-white/30 p-4 rounded-2xl flex items-center gap-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                  <div className="bg-accent p-2 rounded-xl text-white shadow-inner">
-                    <service.icon size={20} />
-                  </div>
-                  <div className="text-[10px] font-black uppercase tracking-widest text-white drop-shadow-md">
-                    {service.category}
+            <TiltCard key={service.id} className="h-full">
+              <div
+                className="group relative bg-white rounded-[3rem] p-4 border border-stone-100 shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col h-full"
+                style={{ animationDelay: `${idx * 0.1}s`, transformStyle: 'preserve-3d' }}
+              >
+                {/* Media Container */}
+                <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden mb-8" style={{ transform: 'translateZ(20px)' }}>
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-stone-900/10 group-hover:bg-transparent transition-colors duration-500" />
+                  <div
+                    className="absolute bottom-4 left-4 right-4 bg-white/20 backdrop-blur-md border border-white/30 p-4 rounded-2xl flex items-center gap-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-500 shadow-xl"
+                    style={{ transform: 'translateZ(40px)' }}
+                  >
+                    <div className="bg-accent p-2 rounded-xl text-white shadow-inner">
+                      <service.icon size={20} />
+                    </div>
+                    <div className="text-[10px] font-black uppercase tracking-widest text-white drop-shadow-md">
+                      {service.category}
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Text Content */}
-              <div className="px-4 pb-8 flex-1 flex flex-col">
-                <h3 className="text-2xl font-display font-bold text-stone-900 mb-4 tracking-tight leading-tight">
-                  <ScrambleText text={service.title} />
-                </h3>
-                <p className="text-stone-500 mb-8 leading-relaxed text-sm md:text-base flex-1 line-clamp-4 group-hover:line-clamp-none transition-all duration-500">
-                  {service.description}
-                </p>
-                <Link
-                  to={`/contact?service=${service.id}`}
-                  className="mt-auto inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-stone-400 group-hover:text-accent transition-colors"
-                >
-                  Configure Service <div className="w-6 h-px bg-stone-200 group-hover:bg-accent group-hover:w-10 transition-all" />
-                </Link>
+                {/* Text Content */}
+                <div className="px-4 pb-8 flex-1 flex flex-col" style={{ transformStyle: 'preserve-3d' }}>
+                  <h3 className="text-2xl font-display font-bold text-stone-900 mb-4 tracking-tight leading-tight" style={{ transform: 'translateZ(30px)' }}>
+                    <ScrambleText text={service.title} />
+                  </h3>
+                  <p className="text-stone-500 mb-8 leading-relaxed text-sm md:text-base flex-1 line-clamp-4 group-hover:line-clamp-none transition-all duration-500" style={{ transform: 'translateZ(10px)' }}>
+                    {service.description}
+                  </p>
+                  <Link
+                    to={`/contact?service=${service.id}`}
+                    className="mt-auto inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-stone-400 group-hover:text-accent transition-colors"
+                    style={{ transform: 'translateZ(25px)' }}
+                  >
+                    Configure Service <div className="w-6 h-px bg-stone-200 group-hover:bg-accent group-hover:w-10 transition-all" />
+                  </Link>
+                </div>
               </div>
-            </div>
+            </TiltCard>
           ))}
         </div>
       </section>
