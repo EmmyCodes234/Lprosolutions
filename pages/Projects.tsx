@@ -4,16 +4,16 @@ import LiquidImage from '../components/LiquidImage';
 import { soundManager } from '../components/SoundManager';
 
 const galleryImages = [
-   '/web images/1001836387.jpg',
-   '/web images/1001836393.jpg',
-   '/web images/1001836396.jpg',
-   '/web images/1001836399.jpg',
-   '/web images/1001836405.jpg',
-   '/web images/1001836411.jpg',
-   '/web images/1001836414.jpg',
-   '/web images/1001836417.jpg',
-   '/web images/1001836420.jpg',
-   '/web images/1001836423.jpg',
+   '/web%20images/1001836387.jpg',
+   '/web%20images/1001836393.jpg',
+   '/web%20images/1001836396.jpg',
+   '/web%20images/1001836399.jpg',
+   '/web%20images/1001836405.jpg',
+   '/web%20images/1001836411.jpg',
+   '/web%20images/1001836414.jpg',
+   '/web%20images/1001836417.jpg',
+   '/web%20images/1001836420.jpg',
+   '/web%20images/1001836423.jpg',
 ];
 
 const Projects: React.FC = () => {

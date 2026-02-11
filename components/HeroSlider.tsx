@@ -7,7 +7,7 @@ const slides = [
   {
     id: 1,
     // Image: Steel structure construction with cranes (Industrial/Large Scale)
-    image: '/web images/hero1.jpg',
+    image: '/web%20images/hero1.jpg',
     title: <>Industrial<br />Velocity.</>,
     subtitle: "Executing large-scale industrial projects with global safety standards and precision.",
     ctaPrimary: "View Our Work",
@@ -16,7 +16,7 @@ const slides = [
   {
     id: 2,
     // Image: Deep excavation/foundation work (Civil/Technical)
-    image: '/web images/hero2.jpg',
+    image: '/web%20images/hero2.jpg',
     title: <>Civil<br />Precision.</>,
     subtitle: "Expert management of complex foundations and critical infrastructure systems.",
     ctaPrimary: "View Projects",
@@ -25,7 +25,7 @@ const slides = [
   {
     id: 3,
     // Image: Modern steel canopy structure (Structural/Sustainable)
-    image: '/web images/hero3.jpg',
+    image: '/web%20images/hero3.jpg',
     title: <>Modern<br />Frameworks.</>,
     subtitle: "Delivering versatile, resilient structures designed for the future of West Africa.",
     ctaPrimary: "See Portfolio",

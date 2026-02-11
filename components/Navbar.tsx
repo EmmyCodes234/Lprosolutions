@@ -17,7 +17,7 @@ const menuItems = [
     id: 'services',
     label: 'Services',
     path: '/services',
-    image: '/web images/hero2.jpg',
+    image: '/web%20images/hero2.jpg',
     title: 'Our Expertise',
     subtitle: 'Comprehensive Project Solutions'
   },
@@ -25,7 +25,7 @@ const menuItems = [
     id: 'projects',
     label: 'Projects',
     path: '/projects',
-    image: '/web images/hero3.jpg',
+    image: '/web%20images/hero3.jpg',
     title: 'Featured Projects',
     subtitle: 'Building Liberia\'s Future'
   },
@@ -33,7 +33,7 @@ const menuItems = [
     id: 'company',
     label: 'About',
     path: '/about',
-    image: '/web images/1001836414.jpg',
+    image: '/web%20images/1001836414.jpg',
     title: 'Our Culture',
     subtitle: 'Professional, Ethical, Committed'
   },
@@ -41,7 +41,7 @@ const menuItems = [
     id: 'contact',
     label: 'Contact',
     path: '/contact',
-    image: '/web images/hero1.jpg',
+    image: '/web%20images/hero1.jpg',
     title: 'Start a Project',
     subtitle: 'Let\'s build something together'
   }
@@ -260,7 +260,7 @@ const Navbar: React.FC = () => {
                 {/* Card 1 */}
                 <Link to="/contact" onClick={() => setIsOpen(false)} className="flex-1 relative rounded-[2.5rem] overflow-hidden group cursor-pointer shadow-lg hover:shadow-2xl transition-all">
                   <img
-                    src="/web images/1001836396.jpg"
+                    src="/web%20images/1001836396.jpg"
                     loading="lazy"
                     decoding="async"
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -276,7 +276,7 @@ const Navbar: React.FC = () => {
                 {/* Card 2 */}
                 <Link to="/contact" onClick={() => setIsOpen(false)} className="flex-1 relative rounded-[2.5rem] overflow-hidden group cursor-pointer shadow-lg hover:shadow-2xl transition-all">
                   <img
-                    src="/web images/1001836405.jpg"
+                    src="/web%20images/1001836405.jpg"
                     loading="lazy"
                     decoding="async"
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
