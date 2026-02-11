@@ -19,7 +19,8 @@ const services = [
     title: 'PMO Services',
     description: 'We establish and manage centralized Project Management Offices that serve as the nerve center for your initiatives. Our methodologies ensure standardized processes, resource optimization, and real-time performance tracking.',
     icon: Briefcase,
-    image: 'https://picsum.photos/id/1/800/600'
+    // Professional African business meeting
+    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop'
   },
   {
     id: 'gov',
@@ -27,7 +28,8 @@ const services = [
     title: 'Governance & Risk',
     description: 'Comprehensive frameworks for project governance and proactive risk management strategies to minimize uncertainty. We ensure regulatory compliance and strategic portfolio management.',
     icon: ShieldCheck,
-    image: 'https://picsum.photos/id/1055/800/600'
+    // Corporate Black woman executive
+    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop'
   },
   {
     id: 'eng',
@@ -35,7 +37,8 @@ const services = [
     title: 'Civil Engineering & Construction',
     description: 'From the first blueprint to the final inspection, L-Pro provides end-to-end oversight. We act as your owner’s representative, ensuring contractors adhere to strict quality controls and safety standards.',
     icon: HardHat,
-    image: 'https://picsum.photos/id/164/800/600'
+    // Black Engineer on site
+    image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=800&auto=format&fit=crop'
   },
   {
     id: 'tel',
@@ -43,7 +46,8 @@ const services = [
     title: 'Telecom & Energy',
     description: 'Specialized solutions for the telecommunications and energy sectors, focusing on infrastructure and efficiency.',
     icon: Zap,
-    image: 'https://picsum.photos/id/61/800/600'
+    // Industrial/Engineering context
+    image: 'https://images.unsplash.com/photo-1581092921461-eab62e97a782?q=80&w=800&auto=format&fit=crop'
   },
   {
     id: 'edu',
@@ -51,7 +55,8 @@ const services = [
     title: 'Training & Institutional Strengthening',
     description: 'True development leaves a legacy. We design capacity-building programs that transfer skills to local teams, ensuring that the infrastructure we build can be sustained and maintained by the community long after we leave.',
     icon: GraduationCap,
-    image: 'https://picsum.photos/id/60/800/600'
+    // African classroom/training
+    image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop'
   },
   {
     id: 'opt',
@@ -59,7 +64,8 @@ const services = [
     title: 'Process Optimization',
     description: 'Analyzing and improving business processes to increase operational efficiency and reduce costs.',
     icon: TrendingUp,
-    image: 'https://picsum.photos/id/180/800/600'
+    // Diverse team collaboration
+    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop'
   },
   {
     id: 'stake',
@@ -67,7 +73,8 @@ const services = [
     title: 'Stakeholder Engagement',
     description: 'Strategic management of project stakeholders and thorough social/environmental impact assessments.',
     icon: Users,
-    image: 'https://picsum.photos/id/231/800/600'
+    // Community engagement/meeting
+    image: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=800&auto=format&fit=crop'
   },
   {
     id: 'feas',
@@ -75,7 +82,8 @@ const services = [
     title: 'Feasibility Studies',
     description: 'Detailed project evaluations and feasibility studies to support data-driven investment decisions. We provide in-depth studies to ensure project viability before launch.',
     icon: FileSearch,
-    image: 'https://picsum.photos/id/450/800/600'
+    // Analysis/Planning
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop'
   }
 ];
 
@@ -94,7 +102,7 @@ const Services: React.FC = () => {
       <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6 text-center bg-stone-900 border-b border-stone-800">
         <div className="absolute inset-0 bg-noise opacity-[0.03] pointer-events-none" />
         <div className="relative z-10 max-w-[1440px] mx-auto">
-          <div className="inline-block bg-accent px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] text-stone-950 mb-8 animate-reveal-up opacity-0" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
+          <div className="inline-block bg-accent px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] text-white mb-8 animate-reveal-up opacity-0" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
             Our Expertise
           </div>
           <h1 className="text-5xl md:text-8xl font-display font-black tracking-tight text-white mb-8 leading-[1.05]">
@@ -140,7 +148,7 @@ const Services: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-stone-900/10 group-hover:bg-transparent transition-colors duration-500" />
                 <div className="absolute bottom-4 left-4 right-4 bg-white/20 backdrop-blur-md border border-white/30 p-4 rounded-2xl flex items-center gap-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                  <div className="bg-accent p-2 rounded-xl text-stone-950 shadow-inner">
+                  <div className="bg-accent p-2 rounded-xl text-white shadow-inner">
                     <service.icon size={20} />
                   </div>
                   <div className="text-[10px] font-black uppercase tracking-widest text-white drop-shadow-md">

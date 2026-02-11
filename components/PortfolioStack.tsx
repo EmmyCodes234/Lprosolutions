@@ -9,7 +9,8 @@ const projects = [
     title: 'Sinkor Corporate Heights',
     description: 'A 12-story mixed-use complex defining the new Monrovia skyline. Integrated green building technologies with local architectural motifs.',
     tags: ['Engineering', 'Governance'],
-    image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=2670&auto=format&fit=crop'
+    // Modern building with African context/lighting
+    image: 'https://images.unsplash.com/photo-1555400038-63f5ba517a47?q=80&w=2670&auto=format&fit=crop'
   },
   {
     id: 2,
@@ -17,7 +18,8 @@ const projects = [
     title: 'Coastal Highway Rehab',
     description: 'Rehabilitating 45km of critical transport arteries for the Ministry of Public Works. Delivered 2 months ahead of schedule.',
     tags: ['Civil Works', 'Public Sector'],
-    image: 'https://images.unsplash.com/photo-1465447142348-e9952c393450?q=80&w=2574&auto=format&fit=crop'
+    // Road work
+    image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2670&auto=format&fit=crop'
   },
   {
     id: 3,
@@ -25,6 +27,7 @@ const projects = [
     title: 'Central Bank Annex',
     description: 'High-security structural engineering and systems integration. Implemented world-class access control and seismic reinforcement.',
     tags: ['Security', 'Architecture'],
+    // Security/Tech/Architecture
     image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2670&auto=format&fit=crop'
   }
 ];

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Logo from './Logo';
 
 const Preloader: React.FC = () => {
   const [isHidden, setIsHidden] = useState(false);
@@ -28,8 +29,11 @@ const Preloader: React.FC = () => {
       className={`fixed inset-0 bg-black z-[9999] flex flex-col justify-center items-center transition-all duration-1000 ease-out ${isHidden ? 'opacity-0 invisible' : 'opacity-100 visible'
         }`}
     >
-      <div className="text-white text-5xl md:text-8xl font-display font-black tracking-tighter mb-12 animate-pulse-slow">
-        L-PRO
+      <div className="mb-12 animate-pulse-slow flex flex-col items-center">
+        <Logo color="white" height="h-32 md:h-48" />
+        <div className="text-white text-[10px] md:text-xs font-black uppercase tracking-[0.4em] pl-1 opacity-80 -mt-10 md:-mt-14">
+          Consult. Plan. Deliver.
+        </div>
       </div>
       <div className="w-64 h-[2px] bg-stone-800 rounded-full overflow-hidden">
         <div

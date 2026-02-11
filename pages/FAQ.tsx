@@ -16,7 +16,7 @@ const FAQ: React.FC = () => {
         },
         {
             q: "Does L-Pro provide regional services outside of Liberia?",
-            a: "Yes. While headquartered in Monrovia, our operational structure is designed for regional scale. We currently support infrastructure development and technical advisory across West African markets."
+            a: "Yes. While headquartered in Liberia, our operational structure is designed for regional scale. We currently support infrastructure development and technical advisory across West African markets."
         },
         {
             q: "What is your approach to capacity building?",
@@ -36,7 +36,7 @@ const FAQ: React.FC = () => {
 
                 {/* Protocol Header */}
                 <div className="max-w-4xl mb-24 md:mb-32">
-                    <div className="inline-block bg-accent px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-[0.2em] text-stone-950 mb-8 animate-revealUp">
+                    <div className="inline-block bg-accent px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-[0.2em] text-white mb-8 animate-revealUp">
                         Support Infrastructure
                     </div>
                     <h1 className="text-6xl md:text-[8rem] font-display font-black tracking-tighter text-stone-950 leading-[0.8] mb-12 animate-revealUp animation-delay-100">
@@ -64,7 +64,7 @@ const FAQ: React.FC = () => {
                                     <span className={`text-xl md:text-2xl font-display font-bold transition-colors ${openIdx === i ? 'text-stone-950' : 'text-stone-400 group-hover:text-stone-600'}`}>
                                         {faq.q}
                                     </span>
-                                    <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-all ${openIdx === i ? 'bg-stone-950 text-accent rotate-180' : 'bg-stone-50 text-stone-300'}`}>
+                                    <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-all ${openIdx === i ? 'bg-stone-950 text-white rotate-180' : 'bg-stone-50 text-stone-300'}`}>
                                         <ChevronDown size={20} />
                                     </div>
                                 </button>

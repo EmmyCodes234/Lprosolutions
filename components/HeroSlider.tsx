@@ -6,28 +6,30 @@ import MagneticButton from './MagneticButton';
 const slides = [
   {
     id: 1,
-    // Swapped for a more generic, abstract modern glass building
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2670&auto=format&fit=crop',
-    title: <>Governance,<br />Elevated.</>,
-    subtitle: "World-class project management for West Africa’s most ambitious skylines.",
-    ctaPrimary: "View Our Work", // Changed from "Start Project"
+    // Image: Steel structure construction with cranes (Industrial/Large Scale)
+    image: '/web images/hero1.jpg',
+    title: <>Industrial<br />Velocity.</>,
+    subtitle: "Executing large-scale industrial projects with global safety standards and precision.",
+    ctaPrimary: "View Our Work",
     ctaSecondary: "Explore Services"
   },
   {
     id: 2,
-    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2670&auto=format&fit=crop', // Construction/Concrete
-    title: <>Precision<br />Engineering.</>,
-    subtitle: "Technical expertise that ensures infrastructure stands the test of time.",
-    ctaPrimary: "View Our Work", // Changed from "Start Project"
-    ctaSecondary: "View Expertise"
+    // Image: Deep excavation/foundation work (Civil/Technical)
+    image: '/web images/hero2.jpg',
+    title: <>Civil<br />Precision.</>,
+    subtitle: "Expert management of complex foundations and critical infrastructure systems.",
+    ctaPrimary: "View Projects",
+    ctaSecondary: "Our Expertise"
   },
   {
     id: 3,
-    image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop', // People/Meeting
-    title: <>Capacity,<br />Built.</>,
-    subtitle: "Training local teams to maintain and sustain the future we build together.",
-    ctaPrimary: "View Our Work", // Changed from "Start Project"
-    ctaSecondary: "Our Mission"
+    // Image: Modern steel canopy structure (Structural/Sustainable)
+    image: '/web images/hero3.jpg',
+    title: <>Modern<br />Frameworks.</>,
+    subtitle: "Delivering versatile, resilient structures designed for the future of West Africa.",
+    ctaPrimary: "See Portfolio",
+    ctaSecondary: "Contact Us"
   }
 ];
 

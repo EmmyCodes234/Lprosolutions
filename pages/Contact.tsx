@@ -73,10 +73,11 @@ const Contact: React.FC = () => {
               <div>
                 <h3 className="text-xs font-black uppercase tracking-[0.3em] text-stone-400 mb-8">Regional Headquarters</h3>
                 <div className="group cursor-pointer">
-                  <p className="text-2xl font-display font-bold text-stone-900 mb-2 group-hover:text-accent transition-colors">Sinkor, Monrovia</p>
+                  <p className="text-2xl font-display font-bold text-stone-900 mb-2 group-hover:text-accent transition-colors">Paynesville, Liberia</p>
                   <p className="text-stone-500 text-lg leading-relaxed">
-                    123 Tubman Boulevard,<br />
-                    Lower Sinkor, Liberia
+                    1st Floor, Samir Building<br />
+                    Adjacent ELWA Hospital, RIA Highway<br />
+                    Paynesville City, Liberia
                   </p>
                   <div className="mt-4 flex items-center gap-2 text-stone-400 group-hover:text-stone-900 transition-colors">
                     <span className="text-xs font-black uppercase tracking-widest">View Map</span>
@@ -89,8 +90,8 @@ const Contact: React.FC = () => {
                 <div>
                   <h3 className="text-xs font-black uppercase tracking-[0.3em] text-stone-400 mb-6">Direct Channels</h3>
                   <div className="space-y-4">
-                    <a href="mailto:partnerships@l-pro.com" className="block text-stone-900 hover:text-accent font-bold text-lg transition-colors">partnerships@l-pro.com</a>
-                    <a href="tel:+231770000000" className="block text-stone-900 hover:text-accent font-bold text-lg transition-colors">+231 77 000 0000</a>
+                    <a href="mailto:info@lprosolutions.org" className="block text-stone-900 hover:text-accent font-bold text-lg transition-colors">info@lprosolutions.org</a>
+                    <a href="tel:+231777200001" className="block text-stone-900 hover:text-accent font-bold text-lg transition-colors">+231 77 720 0001</a>
                   </div>
                 </div>
                 <div>
@@ -106,7 +107,7 @@ const Contact: React.FC = () => {
               <img
                 src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=1400&auto=format&fit=crop"
                 className="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-1000 scale-105 group-hover:scale-100"
-                alt="Monrovia Headquarters"
+                alt="Paynesville Headquarters"
               />
               <div className="absolute inset-0 bg-stone-950/20 group-hover:bg-transparent transition-colors duration-1000" />
               <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between pointer-events-none">
@@ -123,7 +124,7 @@ const Contact: React.FC = () => {
           <div className="lg:col-span-7 bg-white rounded-[4rem] p-8 md:p-16 shadow-[0_40px_100px_rgba(0,0,0,0.03)] border border-stone-100 animate-revealUp animation-delay-400">
             {formState === 'success' ? (
               <div className="py-24 flex flex-col items-center text-center">
-                <div className="w-24 h-24 bg-stone-950 rounded-full flex items-center justify-center text-accent mb-8 shadow-2xl">
+                <div className="w-24 h-24 bg-stone-950 rounded-full flex items-center justify-center text-white mb-8 shadow-2xl">
                   <Mail size={40} />
                 </div>
                 <h2 className="text-4xl md:text-5xl font-display font-black text-stone-900 mb-6 tracking-tight">Communication Logged.</h2>

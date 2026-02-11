@@ -7,17 +7,17 @@ import MagneticButton from './MagneticButton';
 const menuItems = [
   {
     id: 'meet',
-    label: 'Meet us',
-    path: '/about',
-    image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop',
-    title: 'Inside L-Pro Solutions',
-    subtitle: 'Where Innovation Meets Execution'
+    label: 'Founder',
+    path: '/founder',
+    image: '/founder/hero.jpg',
+    title: 'James Monbo Lynch',
+    subtitle: 'Founder & Lead Consultant'
   },
   {
     id: 'services',
     label: 'Services',
     path: '/services',
-    image: 'https://images.unsplash.com/photo-1581094794329-cd11965d1162?q=80&w=1932&auto=format&fit=crop',
+    image: '/web images/hero2.jpg',
     title: 'Our Expertise',
     subtitle: 'Comprehensive Project Solutions'
   },
@@ -25,15 +25,15 @@ const menuItems = [
     id: 'projects',
     label: 'Projects',
     path: '/projects',
-    image: 'https://images.unsplash.com/photo-1541976544351-e4edbc077f98?q=80&w=1932&auto=format&fit=crop',
+    image: '/web images/hero3.jpg',
     title: 'Featured Projects',
     subtitle: 'Building Liberia\'s Future'
   },
   {
     id: 'company',
-    label: 'Company',
+    label: 'About',
     path: '/about',
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1932&auto=format&fit=crop',
+    image: '/web images/1001836414.jpg',
     title: 'Our Culture',
     subtitle: 'Professional, Ethical, Committed'
   },
@@ -41,7 +41,7 @@ const menuItems = [
     id: 'contact',
     label: 'Contact',
     path: '/contact',
-    image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1932&auto=format&fit=crop',
+    image: '/web images/hero1.jpg',
     title: 'Start a Project',
     subtitle: 'Let\'s build something together'
   }
@@ -218,7 +218,6 @@ const Navbar: React.FC = () => {
                   {/* Additional small links */}
                   <li className="pt-8 pl-8 space-y-4 border-l border-stone-200 ml-4">
                     <Link to="/faq" onClick={() => setIsOpen(false)} className="block text-stone-400 hover:text-stone-900 font-bold text-xs uppercase tracking-[0.2em]">Help Center / FAQ</Link>
-                    <Link to="/blog" onClick={() => setIsOpen(false)} className="block text-stone-400 hover:text-stone-900 font-bold text-xs uppercase tracking-[0.2em]">Story & Insights</Link>
                   </li>
                 </ul>
               </div>
@@ -245,21 +244,21 @@ const Navbar: React.FC = () => {
                 {/* Card 1 */}
                 <Link to="/contact" onClick={() => setIsOpen(false)} className="flex-1 relative rounded-[2.5rem] overflow-hidden group cursor-pointer shadow-lg hover:shadow-2xl transition-all">
                   <img
-                    src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=1600&auto=format&fit=crop"
+                    src="/web images/1001836396.jpg"
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     alt="HQ"
                   />
                   <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors" />
                   <div className="absolute top-8 left-8 right-8">
                     <h3 className="text-3xl font-bold text-white leading-tight">Visit Our Offices</h3>
-                    <p className="text-white/80 mt-2 flex items-center gap-2 text-sm">Join us at Tubman Blvd for a face-to-face consultation.</p>
+                    <p className="text-white/80 mt-2 flex items-center gap-2 text-sm">Join us at Paynesville for a face-to-face consultation.</p>
                   </div>
                 </Link>
 
                 {/* Card 2 */}
                 <Link to="/contact" onClick={() => setIsOpen(false)} className="flex-1 relative rounded-[2.5rem] overflow-hidden group cursor-pointer shadow-lg hover:shadow-2xl transition-all">
                   <img
-                    src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1600&auto=format&fit=crop"
+                    src="/web images/1001836405.jpg"
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     alt="Meeting"
                   />

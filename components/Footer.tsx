@@ -20,16 +20,21 @@ const Footer: React.FC = () => {
 
                 {/* Top Section: Signature & Strategic CTA */}
                 <div className="flex flex-col lg:flex-row justify-between items-start mb-24 gap-16">
-                    <div className="flex flex-col gap-8 max-w-xl">
-                        <Logo color="white" height="h-40 md:h-56" className="origin-left" />
-                        <p className="text-xl md:text-2xl text-stone-400 font-light leading-relaxed">
+                    <div className="flex flex-col max-w-xl">
+                        <div className="flex flex-col">
+                            <Logo color="white" height="h-32 md:h-48" className="origin-left" />
+                            <div className="text-white text-[10px] md:text-xs font-black uppercase tracking-[0.4em] pl-1 opacity-80 -mt-10 md:-mt-14">
+                                Consult. Plan. Deliver.
+                            </div>
+                        </div>
+                        <p className="text-xl md:text-2xl text-stone-400 font-light leading-relaxed mt-12">
                             West Africa's definitive engineering consultancy and project management office.
                             <span className="text-white block mt-4 font-normal italic">Globally certified, locally empowered.</span>
                         </p>
                     </div>
 
                     <div className="flex flex-col items-start lg:items-end gap-8">
-                        <div className="text-accent text-[10px] font-black uppercase tracking-[0.4em]">Engagement Protocol</div>
+                        <div className="text-white text-[10px] font-black uppercase tracking-[0.4em]">Engagement Protocol</div>
                         <h2 className="text-4xl md:text-6xl font-display font-black tracking-tighter leading-tight lg:text-right">
                             Ready to build <br />
                             <span className="text-stone-600 italic text-3xl md:text-5xl">the future?</span>
@@ -51,13 +56,14 @@ const Footer: React.FC = () => {
                     {/* Headquarters */}
                     <div className="space-y-8">
                         <h4 className="text-stone-400 font-black text-[10px] uppercase tracking-[0.3em] flex items-center gap-2">
-                            <MapPin size={10} className="text-accent" /> Headquarters
+                            <MapPin size={10} className="text-stone-400" /> Headquarters
                         </h4>
                         <div className="text-stone-300 space-y-2">
-                            <p className="font-bold">Monrovia HQ</p>
+                            <p className="font-bold">Paynesville HQ</p>
                             <p className="text-sm text-stone-500 leading-relaxed font-light">
-                                Tubman Boulevard, Sinkor<br />
-                                Monrovia, Liberia
+                                1st Floor, Samir Building<br />
+                                Adjacent ELWA Hospital, RIA Highway<br />
+                                Paynesville City, Liberia
                             </p>
                         </div>
                     </div>
@@ -65,16 +71,16 @@ const Footer: React.FC = () => {
                     {/* Direct Contact */}
                     <div className="space-y-8">
                         <h4 className="text-stone-400 font-black text-[10px] uppercase tracking-[0.3em] flex items-center gap-2">
-                            <Mail size={10} className="text-accent" /> Communication
+                            <Mail size={10} className="text-stone-400" /> Communication
                         </h4>
                         <div className="space-y-4">
-                            <a href="mailto:partnerships@l-pro.com" className="group block">
-                                <span className="text-[10px] text-stone-600 uppercase block mb-1">Partnerships</span>
-                                <span className="text-stone-300 text-sm group-hover:text-accent transition-colors">partnerships@l-pro.com</span>
+                            <a href="mailto:info@lprosolutions.org" className="group block">
+                                <span className="text-[10px] text-stone-600 uppercase block mb-1">General Inquiries</span>
+                                <span className="text-stone-300 text-sm group-hover:text-accent transition-colors">info@lprosolutions.org</span>
                             </a>
-                            <a href="tel:+231770000000" className="group block">
+                            <a href="tel:+231777200001" className="group block">
                                 <span className="text-[10px] text-stone-600 uppercase block mb-1">Direct Line</span>
-                                <span className="text-stone-300 text-sm group-hover:text-accent transition-colors">+231 77 000 0000</span>
+                                <span className="text-stone-300 text-sm group-hover:text-accent transition-colors">+231 77 720 0001</span>
                             </a>
                         </div>
                     </div>
@@ -86,7 +92,6 @@ const Footer: React.FC = () => {
                             <Link to="/about" className="hover:text-white transition-colors">About Us</Link>
                             <Link to="/services" className="hover:text-white transition-colors">Services</Link>
                             <Link to="/projects" className="hover:text-white transition-colors">Project Portfolio</Link>
-                            <Link to="/blog" className="hover:text-white transition-colors">Insights & Blog</Link>
                         </div>
                     </div>
 

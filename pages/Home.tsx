@@ -5,7 +5,7 @@ import MagneticButton from '../components/MagneticButton';
 import HeroSlider from '../components/HeroSlider';
 import ServicesGrid from '../components/ServicesGrid';
 import ImpactSection from '../components/ImpactSection';
-import PortfolioStack from '../components/PortfolioStack';
+
 
 const Home: React.FC = () => {
   return (
@@ -36,7 +36,7 @@ const Home: React.FC = () => {
       <div className="relative z-10">
         <ServicesGrid />
         <ImpactSection />
-        <PortfolioStack />
+
       </div>
 
       {/* Strategic Approach (Blueprint Section) */}
@@ -87,35 +87,44 @@ const Home: React.FC = () => {
       </section>
 
       {/* Social Proof (Trust Section) */}
-      <section className="py-24 md:py-40 bg-stone-50">
+      {/* Strategic Alliances (Pending Logos) */}
+      {/* Strategic Alliances */}
+      <section className="py-24 bg-white">
         <div className="max-w-[1440px] mx-auto px-6">
-          <div className="text-center mb-24">
-            <div className="text-xs font-black uppercase tracking-[0.4em] text-stone-400 mb-6 underline decoration-accent underline-offset-8">Testimonials</div>
-            <h2 className="text-4xl md:text-6xl font-display font-bold text-stone-900 tracking-tight">Trusted by Industry Leaders</h2>
+          <div className="text-center mb-16">
+            <div className="text-xs font-black uppercase tracking-[0.4em] text-stone-400 mb-6 underline decoration-accent underline-offset-8">Partnerships</div>
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-stone-900 tracking-tight">Strategic Alliances</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {[
-              { text: "L-Pro's PMO services transformed how we handle our infrastructure projects. The level of governance they introduced was world-class.", author: "James K.", role: "Director of Infrastructure" },
-              { text: "Their training program is exceptional. Our team is now PMP certified and managing projects with much higher efficiency.", author: "Sarah M.", role: "HR Manager, Telecom Corp" },
-              { text: "Detailed feasibility studies that saved us millions. They are the go-to firm for serious evaluations in Liberia.", author: "David T.", role: "Investment Lead" }
-            ].map((t, i) => (
-              <div key={i} className="bg-white p-12 rounded-[3rem] border border-stone-100 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-4">
-                <div className="flex text-accent mb-8 gap-1">
-                  {[...Array(5)].map((_, i) => <Star key={i} size={14} fill="currentColor" />)}
-                </div>
-                <p className="text-stone-600 text-lg mb-10 leading-[1.8] font-light">"{t.text}"</p>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-stone-100 rounded-2xl p-1 overflow-hidden border border-stone-200">
-                    <img src={`https://picsum.photos/seed/${i + 50}/100`} alt="Avatar" className="w-full h-full object-cover rounded-xl" />
-                  </div>
-                  <div>
-                    <div className="font-bold text-stone-900 text-sm tracking-tight">{t.author}</div>
-                    <div className="text-stone-400 text-[10px] font-black uppercase tracking-widest">{t.role}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
+          <div className="relative flex overflow-x-hidden group opacity-80">
+            <style>{`
+              .animate-marquee-fast {
+                animation: marquee 15s linear infinite;
+              }
+            `}</style>
+            <div className="animate-marquee-fast whitespace-nowrap flex items-center gap-12 md:gap-24">
+              {/* Set 1 */}
+              <img src="/partners/arcelormittal.png" alt="ArcelorMittal" className="h-12 md:h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+              <img src="/partners/worldbank.svg" alt="World Bank" className="h-12 md:h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+              <img src="/partners/uaf.png" alt="Universal Access Fund" className="h-16 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+              <img src="/partners/lec.png" alt="Liberia Electricity Corporation" className="h-16 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+              <img src="/partners/knet.png" alt="KNET Ltd" className="h-10 md:h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+              <img src="/partners/bil.jpg" alt="Banking Institute of Liberia" className="h-16 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500 mix-blend-multiply" />
+
+              {/* Set 2 */}
+              <img src="/partners/arcelormittal.png" alt="ArcelorMittal" className="h-12 md:h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+              <img src="/partners/worldbank.svg" alt="World Bank" className="h-12 md:h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+              <img src="/partners/uaf.png" alt="Universal Access Fund" className="h-16 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+              <img src="/partners/lec.png" alt="Liberia Electricity Corporation" className="h-16 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+              <img src="/partners/knet.png" alt="KNET Ltd" className="h-10 md:h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+              <img src="/partners/bil.jpg" alt="Banking Institute of Liberia" className="h-16 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500 mix-blend-multiply" />
+
+              {/* Set 3 */}
+              <img src="/partners/arcelormittal.png" alt="ArcelorMittal" className="h-12 md:h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+              <img src="/partners/worldbank.svg" alt="World Bank" className="h-12 md:h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+              <img src="/partners/uaf.png" alt="Universal Access Fund" className="h-16 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+              <img src="/partners/lec.png" alt="Liberia Electricity Corporation" className="h-16 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+            </div>
           </div>
         </div>
       </section>

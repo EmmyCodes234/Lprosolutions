@@ -14,7 +14,7 @@ const About: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-stone-900/40 via-transparent to-stone-50" />
 
         <div className="relative z-10 max-w-[1440px] mx-auto px-6 text-center">
-          <div className="inline-block bg-accent px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] text-stone-950 mb-8 animate-reveal-up opacity-0" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
+          <div className="inline-block bg-accent px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] text-white mb-8 animate-reveal-up opacity-0" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
             Meet L-Pro Solutions
           </div>
           <h1 className="text-5xl md:text-8xl font-display font-black tracking-tight text-white mb-8 drop-shadow-2xl">
@@ -33,19 +33,19 @@ const About: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="space-y-12">
               <div>
-                <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-stone-400 mb-4">Our Mission</h2>
+                <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-accent mb-4">Our Vision</h2>
                 <p className="text-3xl md:text-5xl font-display font-bold leading-tight tracking-tight">
-                  To accelerate Liberia’s development by delivering infrastructure solutions that are <span className="text-accent underline decoration-stone-200 underline-offset-8">sustainable, transparent, and world-class.</span>
+                  To be the leading provider of innovative and effective project management solutions, empowering businesses in Liberia to achieve <span className="text-accent underline decoration-stone-200 underline-offset-8">excellence, efficiency, and sustainable growth.</span>
                 </p>
               </div>
 
               <div className="bg-white p-10 md:p-16 rounded-[3rem] border border-stone-100 shadow-sm relative overflow-hidden group">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-accent/5 rounded-full -mr-20 -mt-20 transition-transform group-hover:scale-150 duration-700" />
-                <h3 className="text-2xl font-display font-bold mb-6">Our Story</h3>
+                <h3 className="text-xs font-bold uppercase tracking-[0.3em] text-stone-400 mb-4">Our Mission</h3>
                 <p className="text-stone-500 text-lg leading-relaxed">
-                  Founded in Monrovia, L-Pro Solutions emerged from a need for stricter governance in the construction sector. We saw that many projects failed not due to lack of funding, but due to a lack of rigorous management.
+                  At L-Pro Solutions, we are committed to delivering top-tier project management, training, and consultancy services that enhance organizational efficiency and project success. We partner with businesses across diverse industries, providing tailored solutions, best practices, and expert guidance to drive impactful results.
                   <br /><br />
-                  We exist to bridge the critical gap between international engineering standards and local execution.
+                  Our goal is to foster a culture of <span className="font-semibold text-stone-700">excellence, accountability, and continuous improvement</span> in Liberia's project management landscape.
                 </p>
               </div>
             </div>
