@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Linkedin, Instagram, X, ArrowRight, Mail, Phone, MapPin } from 'lucide-react';
 import MagneticButton from './MagneticButton';
 import Logo from './Logo';
 
 const Footer: React.FC = () => {
+    const [emailCopied, setEmailCopied] = useState(false);
+
+    const handleCopyEmail = (e: React.MouseEvent) => {
+        e.preventDefault();
+        const email = 'info@lprosolutions.org';
+        navigator.clipboard.writeText(email).then(() => {
+            setEmailCopied(true);
+            setTimeout(() => setEmailCopied(false), 2000);
+        });
+    };
     return (
         <footer className="relative bg-stone-950 text-white overflow-hidden pt-48 pb-12">
             <div className="absolute inset-0 bg-noise opacity-[0.03] pointer-events-none" />
@@ -74,9 +84,17 @@ const Footer: React.FC = () => {
                             <Mail size={10} className="text-stone-400" /> Communication
                         </h4>
                         <div className="space-y-4">
-                            <a href="mailto:info@lprosolutions.org" className="group block">
-                                <span className="text-[10px] text-stone-600 uppercase block mb-1">General Inquiries</span>
-                                <span className="text-stone-300 text-sm group-hover:text-accent transition-colors">info@lprosolutions.org</span>
+                            <a
+                                href="mailto:info@lprosolutions.org"
+                                onClick={handleCopyEmail}
+                                className="group block cursor-pointer"
+                            >
+                                <span className={`text-[10px] uppercase block mb-1 transition-colors ${emailCopied ? 'text-accent' : 'text-stone-600'}`}>
+                                    {emailCopied ? 'Copied to Clipboard!' : 'General Inquiries'}
+                                </span>
+                                <span className={`text-sm transition-colors ${emailCopied ? 'text-white font-bold' : 'text-stone-300 group-hover:text-accent'}`}>
+                                    info@lprosolutions.org
+                                </span>
                             </a>
                             <a href="tel:+231777200001" className="group block">
                                 <span className="text-[10px] text-stone-600 uppercase block mb-1">Direct Line</span>

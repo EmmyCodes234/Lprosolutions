@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import MagneticButton from '../components/MagneticButton';
+import RevealText from '../components/RevealText';
 
 const About: React.FC = () => {
   return (
@@ -37,19 +38,21 @@ const About: React.FC = () => {
             <div className="space-y-12">
               <div>
                 <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-accent mb-4">Our Vision</h2>
-                <p className="text-3xl md:text-5xl font-display font-bold leading-tight tracking-tight">
-                  To be the leading provider of innovative and effective project management solutions, empowering businesses in Liberia to achieve <span className="text-accent underline decoration-stone-200 underline-offset-8">excellence, efficiency, and sustainable growth.</span>
-                </p>
+                <RevealText
+                  className="text-3xl md:text-5xl font-display font-bold leading-tight tracking-tight"
+                  activeColor="text-stone-900"
+                  text="To be the leading provider of innovative and effective project management solutions, empowering businesses in Liberia to achieve excellence, efficiency, and sustainable growth."
+                />
               </div>
 
               <div className="bg-white p-10 md:p-16 rounded-[3rem] border border-stone-100 shadow-sm relative overflow-hidden group">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-accent/5 rounded-full -mr-20 -mt-20 transition-transform group-hover:scale-150 duration-700" />
                 <h3 className="text-xs font-bold uppercase tracking-[0.3em] text-stone-400 mb-4">Our Mission</h3>
-                <p className="text-stone-500 text-lg leading-relaxed">
-                  At L-Pro Solutions, we are committed to delivering top-tier project management, training, and consultancy services that enhance organizational efficiency and project success. We partner with businesses across diverse industries, providing tailored solutions, best practices, and expert guidance to drive impactful results.
-                  <br /><br />
-                  Our goal is to foster a culture of <span className="font-semibold text-stone-700">excellence, accountability, and continuous improvement</span> in Liberia's project management landscape.
-                </p>
+                <RevealText
+                  className="text-stone-500 text-lg leading-relaxed"
+                  activeColor="text-stone-900"
+                  text="At L-Pro Solutions, we are committed to delivering top-tier project management, training, and consultancy services that enhance organizational efficiency and project success. We partner with businesses across diverse industries, providing tailored solutions, best practices, and expert guidance to drive impactful results. Fostering a culture of excellence, accountability, and continuous improvement in Liberia's project management landscape."
+                />
               </div>
             </div>
 
