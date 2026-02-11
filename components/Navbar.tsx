@@ -89,22 +89,38 @@ const Navbar: React.FC = () => {
       >
         <div className="max-w-[1440px] mx-auto px-6 md:px-8 flex items-center justify-between relative">
 
-          {/* Left: Menu Trigger */}
-          <div className="flex items-center gap-8">
+          {/* Left: Menu Trigger & Nav Links */}
+          <div className="flex items-center gap-6 lg:gap-12">
             <MagneticButton>
               <button
                 onClick={() => setIsOpen(true)}
-                className={`flex items-center gap-3 group hover:opacity-70 transition-opacity ${isTransparent ? 'blend-difference' : 'text-stone-900'}`}
+                className={`flex items-center gap-3 group hover:opacity-70 transition-opacity ${isTransparent ? 'text-white' : 'text-stone-900'}`}
               >
-                <Menu size={28} className="stroke-[1.5]" />
-                <span className="hidden md:inline font-bold text-sm tracking-wide">Menu</span>
+                <Menu size={24} className="stroke-[2]" />
+                <span className="hidden sm:inline font-bold text-xs uppercase tracking-[0.2em]">Menu</span>
               </button>
             </MagneticButton>
+
+            {/* Desktop Navigation Links */}
+            <div className="hidden lg:flex items-center space-x-2">
+              {menuItems.slice(0, 4).map((item) => (
+                <MagneticButton key={item.id} strength={10}>
+                  <Link
+                    to={item.path}
+                    className={`px-4 py-2 text-xs font-bold uppercase tracking-widest transition-colors ${isTransparent ? 'text-white hover:text-accent' : 'text-stone-900 hover:text-accent'
+                      }`}
+                  >
+                    {item.label}
+                  </Link>
+                </MagneticButton>
+              ))}
+            </div>
           </div>
 
+          {/* Center: Logo */}
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
             <Link to="/" onClick={() => setIsOpen(false)} className="block">
-              <Logo color={isTransparent ? 'white' : 'dark'} height="h-16 md:h-24" />
+              <Logo color={(!isTransparent || isOpen) ? 'dark' : 'white'} height="h-12 md:h-16" />
             </Link>
           </div>
 
@@ -205,8 +221,8 @@ const Navbar: React.FC = () => {
                         onClick={() => setIsOpen(false)}
                         onMouseEnter={() => setActiveMenuId(item.id)}
                         className={`block text-4xl md:text-5xl lg:text-[3.5rem] font-display font-bold transition-all duration-500 px-4 md:px-8 py-2 md:py-4 rounded-full tracking-tighter ${activeMenuId === item.id
-                            ? 'bg-stone-900 text-white shadow-2xl pl-10'
-                            : 'text-stone-900 hover:text-stone-400'
+                          ? 'bg-stone-900 text-white shadow-2xl pl-10'
+                          : 'text-stone-900 hover:text-stone-400'
                           }`}
                       >
                         {item.label}

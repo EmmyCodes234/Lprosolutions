@@ -111,7 +111,7 @@ const Footer: React.FC = () => {
                 <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-12">
                     <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12 text-center md:text-left">
                         <p className="text-[10px] font-black uppercase tracking-[0.4em] text-stone-600">
-                            © 2026 L-PRO SOLUTIONS LTD <span className="mx-2 hidden md:inline">•</span> <span className="block md:inline mt-2 md:mt-0">ENGINEERING EXCELLENCE</span>
+                            © 2026 L-PRO SOLUTIONS LTD <span className="mx-2 hidden md:inline">•</span> <span className="block md:inline mt-2 md:mt-0">ENGINEERING EXCELLENCE</span> <span className="mx-2 hidden md:inline">•</span> <span className="block md:inline mt-2 md:mt-0 underline underline-offset-4 decoration-stone-800">DESIGNED BY <a href="https://litocodes.netlify.app" target="_blank" rel="noopener noreferrer" className="text-stone-400 hover:text-accent transition-colors">LITOCODES</a></span>
                         </p>
                         <div className="flex items-center gap-6 text-stone-400">
                             <a href="#" className="hover:text-accent transition-colors"><Linkedin size={16} /></a>

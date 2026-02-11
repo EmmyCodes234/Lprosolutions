@@ -94,8 +94,11 @@ const App: React.FC = () => {
       <Preloader />
       <ScrollToTopButton />
 
-      {/* Global Noise Overlay */}
-      <div className="fixed inset-0 z-[100] pointer-events-none opacity-[0.04] bg-noise mix-blend-overlay"></div>
+      {/* Global Noise Overlay (Final Polish) */}
+      <div className="noise-overlay"></div>
+
+      {/* Refined Navigation - Outside of skew to ensure stability */}
+      <Navbar />
 
       {/* Main Content Wrapper - Acts as the 'curtain' */}
       <div
@@ -103,7 +106,6 @@ const App: React.FC = () => {
         className="relative z-10 bg-stone-50 rounded-b-[3rem] md:rounded-b-[5rem] flex flex-col min-h-screen shadow-2xl transition-all duration-300 ease-out will-change-transform"
         style={{ marginBottom: `${footerHeight}px` }}
       >
-        <Navbar />
 
         <main className="flex-grow">
           <Routes>

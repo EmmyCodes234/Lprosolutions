@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import { soundManager } from './SoundManager';
 
 interface TiltCardProps {
     children: React.ReactNode;
@@ -38,6 +39,7 @@ const TiltCard: React.FC<TiltCardProps> = ({ children, className = '', intensity
     return (
         <div
             ref={cardRef}
+            onMouseEnter={() => soundManager.play('hover')}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
             className={`perspective-1000 ${className}`}

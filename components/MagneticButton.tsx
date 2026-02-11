@@ -1,4 +1,5 @@
 import React, { useRef, useState, MouseEvent } from 'react';
+import { soundManager } from './SoundManager';
 
 interface MagneticButtonProps {
   children: React.ReactNode;
@@ -43,6 +44,8 @@ const MagneticButton: React.FC<MagneticButtonProps> = ({
   return (
     <div
       ref={ref}
+      onMouseEnter={() => soundManager.play('hover')}
+      onClick={() => soundManager.play('click')}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       className={`transition-transform duration-200 ease-out will-change-transform inline-block ${className}`}

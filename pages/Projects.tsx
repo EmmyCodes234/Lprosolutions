@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import LiquidImage from '../components/LiquidImage';
+import { soundManager } from '../components/SoundManager';
 
 const galleryImages = [
    '/web images/1001836387.jpg',
@@ -63,6 +64,7 @@ const Projects: React.FC = () => {
                      className={`animate-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out relative group rounded-2xl overflow-hidden cursor-zoom-in aspect-[4/5] bg-stone-200`}
                      style={{ transitionDelay: `${(index % 3) * 100}ms` }}
                      onClick={() => setSelectedImage(src)}
+                     onMouseEnter={() => soundManager.play('hover')}
                   >
                      <LiquidImage
                         image1={src}
