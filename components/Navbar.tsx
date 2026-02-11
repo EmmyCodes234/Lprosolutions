@@ -104,13 +104,9 @@ const Navbar: React.FC = () => {
             </MagneticButton>
           </div>
 
-          {/* Center: Logo */}
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
             <Link to="/" onClick={() => setIsOpen(false)} className="block">
-              {/* Apply blend mode only on transparent header */}
-              <div className={isTransparent ? 'blend-difference' : ''}>
-                <Logo color={isTransparent ? 'white' : 'dark'} />
-              </div>
+              <Logo color={isTransparent ? 'white' : 'dark'} height="h-10 md:h-12" />
             </Link>
           </div>
 
@@ -164,7 +160,7 @@ const Navbar: React.FC = () => {
             </MagneticButton>
 
             <div className="absolute left-1/2 -translate-x-1/2 top-8 md:top-8">
-              <Logo color="dark" />
+              <Logo color="dark" height="h-10 md:h-12" />
             </div>
 
             <div className="hidden md:flex gap-4">

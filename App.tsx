@@ -64,13 +64,7 @@ const App: React.FC = () => {
       {/* Global Noise Overlay - Fixed to screen, above everything except modals */}
       <div className="fixed inset-0 z-[100] pointer-events-none opacity-[0.04] bg-noise mix-blend-overlay"></div>
 
-      {/* 
-        Curtain Reveal Layout Structure:
-        1. Main Content Wrapper: Relative, z-10, background color, bottom margin matches footer height.
-        2. Footer: Fixed, bottom-0, z-0.
-      */}
-
-      <div className="relative z-10 bg-stone-50 mb-[600px] md:mb-[500px] shadow-2xl rounded-b-[5rem] flex flex-col min-h-screen">
+      <div className="relative z-10 bg-stone-50 rounded-b-[5rem] flex flex-col min-h-screen shadow-2xl">
         <Navbar />
 
         <main className="flex-grow">
@@ -88,11 +82,9 @@ const App: React.FC = () => {
           </Routes>
         </main>
 
-        {/* Trust Strip acts as the visual bottom of the scrolling content */}
         <TrustStrip />
       </div>
 
-      {/* Fixed Footer sitting behind the curtain */}
       <Footer />
 
     </Router>
