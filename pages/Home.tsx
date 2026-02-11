@@ -17,7 +17,7 @@ const Home: React.FC = () => {
       <section className="py-24 md:py-40 px-6 bg-stone-50 border-b border-stone-100 relative">
         <div className="absolute inset-0 bg-noise opacity-[0.02] pointer-events-none" />
         <div className="max-w-[1440px] mx-auto text-center relative z-10">
-          <div className="inline-block bg-accent px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] text-stone-950 mb-10">
+          <div className="inline-block bg-accent px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] text-white mb-10">
             Founded in Monrovia
           </div>
           <h2 className="text-5xl md:text-9xl font-display font-black tracking-tighter text-stone-900 mb-10 max-w-5xl mx-auto leading-[0.85]">
@@ -159,8 +159,8 @@ const Home: React.FC = () => {
                   })
                     .then(() => {
                       btn.innerHTML = 'Subscribed';
-                      btn.style.backgroundColor = '#FBBC05';
-                      btn.style.color = '#0c0a09';
+                      btn.style.backgroundColor = '#DC2626';
+                      btn.style.color = '#ffffff';
                       setTimeout(() => {
                         btn.innerHTML = originalText;
                         btn.style.backgroundColor = '';
@@ -178,7 +178,7 @@ const Home: React.FC = () => {
                   className="w-full h-20 pl-8 pr-48 rounded-full bg-white/5 border border-white/10 outline-none text-white placeholder-stone-500 focus:border-accent/50 focus:bg-white/10 transition-all font-light"
                 />
                 <div className="absolute right-2 top-2 bottom-2">
-                  <button type="submit" className="h-full bg-white text-stone-900 px-10 rounded-full font-bold hover:bg-accent transition-all active:scale-95 shadow-xl">
+                  <button type="submit" className="h-full bg-white text-stone-900 px-10 rounded-full font-bold hover:bg-accent hover:text-white transition-all active:scale-95 shadow-xl">
                     Subscribe
                   </button>
                 </div>

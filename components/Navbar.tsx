@@ -106,7 +106,7 @@ const Navbar: React.FC = () => {
 
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
             <Link to="/" onClick={() => setIsOpen(false)} className="block">
-              <Logo color={isTransparent ? 'white' : 'dark'} height="h-10 md:h-12" />
+              <Logo color={isTransparent ? 'white' : 'dark'} height="h-16 md:h-24" />
             </Link>
           </div>
 
@@ -115,7 +115,7 @@ const Navbar: React.FC = () => {
             <MagneticButton>
               <Link
                 to="/contact"
-                className="hidden md:flex bg-accent hover:bg-accent-hover text-stone-900 px-6 py-2.5 rounded-full text-sm font-bold transition-colors duration-300 shadow-sm"
+                className="hidden md:flex bg-accent hover:bg-accent-hover text-white px-6 py-2.5 rounded-full text-sm font-bold transition-colors duration-300 shadow-sm"
               >
                 Start Project
               </Link>
@@ -160,7 +160,7 @@ const Navbar: React.FC = () => {
             </MagneticButton>
 
             <div className="absolute left-1/2 -translate-x-1/2 top-8 md:top-8">
-              <Logo color="dark" height="h-10 md:h-12" />
+              <Logo color="dark" height="h-16 md:h-24" />
             </div>
 
             <div className="hidden md:flex gap-4">
@@ -168,7 +168,7 @@ const Navbar: React.FC = () => {
                 <Link
                   to="/contact"
                   onClick={() => setIsOpen(false)}
-                  className="bg-accent hover:bg-accent-hover text-stone-900 px-8 py-3 rounded-full font-bold transition-colors shadow-sm block"
+                  className="bg-accent hover:bg-accent-hover text-white px-8 py-3 rounded-full font-bold transition-colors shadow-sm block"
                 >
                   Initiate a Partnership
                 </Link>
@@ -187,7 +187,7 @@ const Navbar: React.FC = () => {
 
             {/* Mobile Header Right */}
             <div className="md:hidden">
-              <Link to="/contact" onClick={() => setIsOpen(false)} className="bg-accent text-stone-900 px-4 py-2 rounded-full text-xs font-bold">
+              <Link to="/contact" onClick={() => setIsOpen(false)} className="bg-accent text-white px-4 py-2 rounded-full text-xs font-bold">
                 Contact
               </Link>
             </div>

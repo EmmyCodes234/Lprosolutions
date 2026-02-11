@@ -49,7 +49,7 @@ const Contact: React.FC = () => {
       {/* Hero Narrative Section */}
       <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6">
         <div className="max-w-[1440px] mx-auto">
-          <div className="inline-block bg-accent px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-[0.2em] text-stone-950 mb-8 animate-revealUp">
+          <div className="inline-block bg-accent px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-[0.2em] text-white mb-8 animate-revealUp">
             Connect With L-Pro
           </div>
           <h1 className="text-6xl md:text-9xl font-display font-black tracking-tighter text-stone-950 leading-[0.85] mb-12 animate-revealUp animation-delay-100">

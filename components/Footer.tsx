@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
                 {/* Top Section: Signature & Strategic CTA */}
                 <div className="flex flex-col lg:flex-row justify-between items-start mb-24 gap-16">
                     <div className="flex flex-col gap-8 max-w-xl">
-                        <Logo color="white" height="h-24 md:h-28" className="origin-left" />
+                        <Logo color="white" height="h-40 md:h-56" className="origin-left" />
                         <p className="text-xl md:text-2xl text-stone-400 font-light leading-relaxed">
                             West Africa's definitive engineering consultancy and project management office.
                             <span className="text-white block mt-4 font-normal italic">Globally certified, locally empowered.</span>
@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
                         <MagneticButton strength={40}>
                             <Link
                                 to="/contact"
-                                className="group flex items-center gap-6 bg-white text-stone-950 px-10 py-5 rounded-full text-xs font-black uppercase tracking-[0.2em] transition-all hover:bg-accent shadow-2xl"
+                                className="group flex items-center gap-6 bg-white text-stone-950 px-10 py-5 rounded-full text-xs font-black uppercase tracking-[0.2em] transition-all hover:bg-accent hover:text-white shadow-2xl"
                             >
                                 Start A Project <ArrowRight size={18} className="group-hover:-rotate-45 transition-transform duration-500" />
                             </Link>
