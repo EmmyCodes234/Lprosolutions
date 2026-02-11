@@ -6,30 +6,30 @@ import MagneticButton from './MagneticButton';
 const slides = [
   {
     id: 1,
-    // Image: Steel structure construction with cranes (Industrial/Large Scale)
-    image: '/web%20images/hero1.jpg',
-    title: <>Industrial<br />Velocity.</>,
-    subtitle: "Executing large-scale industrial projects with global safety standards and precision.",
-    ctaPrimary: "View Our Work",
-    ctaSecondary: "Explore Services"
+    // Image: Corporate boardroom / Strategic planning
+    image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2664&auto=format&fit=crop',
+    title: <>Strategic<br />Vision.</>,
+    subtitle: "Orchestrating complex initiatives with precision governance and global standards.",
+    ctaPrimary: "Our Services",
+    ctaSecondary: "About L-Pro"
   },
   {
     id: 2,
-    // Image: Deep excavation/foundation work (Civil/Technical)
-    image: '/web%20images/hero2.jpg',
-    title: <>Civil<br />Precision.</>,
-    subtitle: "Expert management of complex foundations and critical infrastructure systems.",
-    ctaPrimary: "View Projects",
-    ctaSecondary: "Our Expertise"
+    // Image: Data analysis / Project oversight
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop',
+    title: <>Data-Driven<br />Insights.</>,
+    subtitle: "Feasibility studies and risk management that empower confident decision-making.",
+    ctaPrimary: "View Expertise",
+    ctaSecondary: "Contact Us"
   },
   {
     id: 3,
-    // Image: Modern steel canopy structure (Structural/Sustainable)
-    image: '/web%20images/hero3.jpg',
-    title: <>Modern<br />Frameworks.</>,
-    subtitle: "Delivering versatile, resilient structures designed for the future of West Africa.",
-    ctaPrimary: "See Portfolio",
-    ctaSecondary: "Contact Us"
+    // Image: Professional team / Capacity building
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2670&auto=format&fit=crop',
+    title: <>Institutional<br />Growth.</>,
+    subtitle: "Building capacity and transferring skills to ensure sustainable development.",
+    ctaPrimary: "Training Programs",
+    ctaSecondary: "Partner With Us"
   }
 ];
 

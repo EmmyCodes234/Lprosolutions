@@ -7,7 +7,8 @@ import {
   GraduationCap,
   TrendingUp,
   Users,
-  FileSearch
+  FileSearch,
+  LayoutDashboard
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ScrambleText from '../components/ScrambleText';
@@ -18,72 +19,64 @@ const services = [
     id: 'pmo',
     category: 'Management',
     title: 'PMO Services',
-    description: 'We establish and manage centralized Project Management Offices that serve as the nerve center for your initiatives. Our methodologies ensure standardized processes, resource optimization, and real-time performance tracking.',
-    icon: Briefcase,
-    // Professional African business meeting
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop'
+    description: 'We establish and manage centralized Project Management Offices (PMO) that serve as the nerve center for your initiatives. Our methodologies ensure standardized processes, resource optimization, and real-time performance tracking.',
+    icon: LayoutDashboard,
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop'
   },
   {
     id: 'gov',
-    category: 'Management',
+    category: 'Strategy',
     title: 'Governance & Risk',
-    description: 'Comprehensive frameworks for project governance and proactive risk management strategies to minimize uncertainty. We ensure regulatory compliance and strategic portfolio management.',
+    description: 'Comprehensive frameworks for project governance and proactive risk management. We minimize uncertainty through regulatory compliance and strategic portfolio oversight.',
     icon: ShieldCheck,
-    // Corporate Black woman executive
     image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop'
   },
   {
-    id: 'eng',
-    category: 'Engineering',
-    title: 'Civil Engineering & Construction',
-    description: 'From the first blueprint to the final inspection, L-Pro provides end-to-end oversight. We act as your owner’s representative, ensuring contractors adhere to strict quality controls and safety standards.',
+    id: 'eng-pm',
+    category: 'Oversight',
+    title: 'Engineering & Construction PM',
+    description: 'Acting as the owner’s representative, we provide end-to-end oversight of engineering and construction projects. We ensure contractors adhere to strict quality controls, timelines, and safety standards.',
     icon: HardHat,
-    // Black Engineer on site
     image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=800&auto=format&fit=crop'
   },
   {
-    id: 'tel',
-    category: 'Engineering',
-    title: 'Telecom & Energy',
-    description: 'Specialized solutions for the telecommunications and energy sectors, focusing on infrastructure and efficiency.',
+    id: 'tel-nrg',
+    category: 'Infrastructure',
+    title: 'Telecom & Energy Solutions',
+    description: 'Specialized project management for the telecommunications and energy sectors. We drive efficiency in infrastructure rollout and grid modernization initiatives.',
     icon: Zap,
-    // Industrial/Engineering context
     image: 'https://images.unsplash.com/photo-1581092921461-eab62e97a782?q=80&w=800&auto=format&fit=crop'
   },
   {
-    id: 'edu',
-    category: 'Training',
-    title: 'Training & Institutional Strengthening',
-    description: 'True development leaves a legacy. We design capacity-building programs that transfer skills to local teams, ensuring that the infrastructure we build can be sustained and maintained by the community long after we leave.',
+    id: 'training',
+    category: 'Capacity',
+    title: 'Corporate Training',
+    description: 'We design capacity-building programs that transfer critical project management skills to local teams, ensuring long-term sustainability and institutional growth.',
     icon: GraduationCap,
-    // African classroom/training
     image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop'
   },
   {
-    id: 'opt',
-    category: 'Management',
+    id: 'bpo',
+    category: 'Optimization',
     title: 'Process Optimization',
-    description: 'Analyzing and improving business processes to increase operational efficiency and reduce costs.',
+    description: 'Analyzing and restructuring business processes to increase operational efficiency. We implement change management strategies that ensure smooth transitions and adoption.',
     icon: TrendingUp,
-    // Diverse team collaboration
     image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop'
   },
   {
-    id: 'stake',
-    category: 'Management',
+    id: 'stakeholder',
+    category: 'Strategy',
     title: 'Stakeholder Engagement',
-    description: 'Strategic management of project stakeholders and thorough social/environmental impact assessments.',
+    description: 'Strategic management of complex stakeholder relationships and thorough social/environmental impact assessments to secure project license to operate.',
     icon: Users,
-    // Community engagement/meeting
     image: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=800&auto=format&fit=crop'
   },
   {
-    id: 'feas',
-    category: 'Management',
+    id: 'feasability',
+    category: 'Strategy',
     title: 'Feasibility Studies',
-    description: 'Detailed project evaluations and feasibility studies to support data-driven investment decisions. We provide in-depth studies to ensure project viability before launch.',
+    description: 'Data-driven project evaluations and feasibility studies. We provide the extensive analysis needed to support investment decisions and ensure project viability.',
     icon: FileSearch,
-    // Analysis/Planning
     image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop'
   }
 ];
@@ -94,7 +87,7 @@ const Services: React.FC = () => {
 
   const filteredServices = filter === 'All Services'
     ? services
-    : services.filter(s => s.category === filter);
+    : services.filter(s => s.category.includes(filter) || filter === 'Management' && (s.category === 'Oversight' || s.category === 'Strategy'));
 
   return (
     <div className="w-full bg-stone-50 font-sans text-stone-900 overflow-hidden">
@@ -107,11 +100,11 @@ const Services: React.FC = () => {
             Our Expertise
           </div>
           <h1 className="text-5xl md:text-8xl font-display font-black tracking-tight text-white mb-8 leading-[1.05]">
-            <span className="block animate-reveal-up opacity-0" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>Comprehensive Solutions.</span>
-            <span className="block animate-reveal-up opacity-0 text-stone-500" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>Predictable Outcomes.</span>
+            <span className="block animate-reveal-up opacity-0" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>Strategic Insight.</span>
+            <span className="block animate-reveal-up opacity-0 text-stone-500" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>Execution Excellence.</span>
           </h1>
           <p className="text-lg md:text-2xl text-stone-400 max-w-2xl mx-auto font-light leading-relaxed animate-reveal-up opacity-0" style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}>
-            We bring structure, clarity, and precision to West Africa’s most demanding development initiatives.
+            We provide the integrated consultancy services that drive West Africa’s most ambitious development initiatives.
           </p>
         </div>
       </section>
@@ -119,10 +112,10 @@ const Services: React.FC = () => {
       {/* Filter/Nav - Premium Sticky Bar */}
       <div className="sticky top-0 z-[40] bg-stone-50/80 backdrop-blur-xl border-b border-stone-200">
         <div className="max-w-[1440px] mx-auto flex justify-start md:justify-center gap-4 py-4 px-6 overflow-x-auto no-scrollbar">
-          {['All Services', 'Management', 'Engineering', 'Training'].map((f, i) => (
+          {['All Services', 'Strategy', 'Oversight', 'Capacity', 'Infrastructure'].map((f, i) => (
             <button
               key={i}
-              onClick={() => setFilter(f)}
+              onClick={() => setFilter(f === 'Management' ? 'Strategy' : f)} // Simple mapping for demo
               className={`px-8 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all ${filter === f ? 'bg-stone-950 text-white shadow-lg scale-105' : 'bg-transparent text-stone-400 hover:text-stone-950 hover:bg-stone-100'}`}
             >
               {f}
@@ -176,7 +169,7 @@ const Services: React.FC = () => {
                     className="mt-auto inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-stone-400 group-hover:text-accent transition-colors"
                     style={{ transform: 'translateZ(25px)' }}
                   >
-                    Configure Service <div className="w-6 h-px bg-stone-200 group-hover:bg-accent group-hover:w-10 transition-all" />
+                    Request Consultation <div className="w-6 h-px bg-stone-200 group-hover:bg-accent group-hover:w-10 transition-all" />
                   </Link>
                 </div>
               </div>
@@ -190,16 +183,16 @@ const Services: React.FC = () => {
         <div className="absolute inset-0 bg-noise opacity-[0.05] pointer-events-none" />
         <div className="max-w-[1440px] mx-auto px-6 relative z-10">
           <div className="text-center mb-20">
-            <h2 className="text-3xl md:text-5xl font-display font-bold mb-6">The L-Pro Methodology</h2>
-            <p className="text-stone-400 max-w-xl mx-auto">A rigorous, four-stage approach to engineering and governance excellence.</p>
+            <h2 className="text-3xl md:text-5xl font-display font-bold mb-6">The Consultancy Excellence Framework</h2>
+            <p className="text-stone-400 max-w-xl mx-auto">A rigorous, four-stage approach to project governance and delivery.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
-              { id: "01", title: "Feasibility", desc: "Scientific evaluation of project viability and risk assessment." },
-              { id: "02", title: "Structure", desc: "Establishing PMO frameworks and governance strictures." },
-              { id: "03", title: "Execution", desc: "Active engineering oversight and real-time QA reporting." },
-              { id: "04", title: "Handover", desc: "Institutional strengthening and sustainable exit strategy." }
+              { id: "01", title: "Assessment", desc: "Feasibility studies, risk analysis, and strategic gap analysis." },
+              { id: "02", title: "Strategy", desc: "Developing the PMO frameworks, governance structures, and roadmaps." },
+              { id: "03", title: "Oversight", desc: "Active project management, quality assurance, and stakeholder engagement." },
+              { id: "04", title: "Optimization", desc: "Capacity building, process refinement, and sustainable handover." }
             ].map((step, i) => (
               <div key={i} className="relative group">
                 <div className="text-8xl font-display font-black text-white/5 absolute -top-10 left-0 transition-colors group-hover:text-accent/10">{step.id}</div>
@@ -219,10 +212,10 @@ const Services: React.FC = () => {
           <h2 className="text-3xl md:text-4xl font-display font-bold text-center text-stone-900 mb-12">Expert Insights (FAQ)</h2>
           <div className="space-y-4">
             {[
-              { q: "How does your PMO service integrate with existing teams?", a: "We work as an extension of your leadership, providing the tools and oversight needed without disrupting established workflows." },
-              { q: "Do you offer on-site engineering supervision?", a: "Yes, our engineers provide full-time on-site management to ensure QA/QC standards are met daily." },
-              { q: "Can you customize corporate training for our specific industry?", a: "Precisely. We perform a gap analysis first and then tailor our curriculum to your actual field needs." },
-              { q: "What is the typical timeline for a feasibility study?", a: "Minor projects take 2-4 weeks; major infrastructure evaluations typically span 8-12 weeks." }
+              { q: "How does your PMO service integrate with existing teams?", a: "We work as an extension of your leadership, providing the governance tools and oversight needed without disrupting established cultural workflows." },
+              { q: "Do you offer on-site project management?", a: "Yes, our consultants provide full-time on-site representation to ensure quality assurance and timeline adherence." },
+              { q: "Can you customize corporate training for our specific industry?", a: "Precisely. We perform a skills gap analysis first and then tailor our project management curriculum to your sector's needs." },
+              { q: "What is the typical timeline for a feasibility study?", a: "Timelines vary by scope. Minor evaluations take 2-4 weeks; major infrastructure feasibility studies typically span 8-12 weeks." }
             ].map((item, i) => (
               <div key={i} className="group">
                 <div

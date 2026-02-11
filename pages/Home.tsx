@@ -21,13 +21,13 @@ const Home: React.FC = () => {
             Founded in Monrovia
           </div>
           <h2 className="text-5xl md:text-9xl font-display font-black tracking-tighter text-stone-900 mb-10 max-w-5xl mx-auto leading-[0.85]">
-            Uncompromising Standards.<br />
+            Strategic Vision.<br />
             <span className="text-stone-300">Local Precision.</span>
           </h2>
           <p className="text-stone-500 text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed font-light">
-            Managing complex infrastructure projects demands more than just technical skill; it requires cultural fluency and rigorous governance. At L-Pro, we bridge the gap between international engineering standards and on-the-ground execution in Liberia.
+            Leading complex development initiatives demands more than just technical skill; it requires cultural fluency and rigorous governance. At L-Pro, we bridge the gap between international standards and on-the-ground execution in Liberia.
             <br className="hidden md:block" />
-            From feasibility to handover, we ensure your vision becomes reality.
+            From feasibility to handover, we ensure your strategic goals are realized.
           </p>
         </div>
       </section>
@@ -68,10 +68,10 @@ const Home: React.FC = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 pt-4">
               {[
-                { title: "Risk Management", desc: "Proactive identification and mitigation of project risks." },
+                { title: "Risk Governance", desc: "Proactive identification and mitigation of project risks." },
                 { id: "01", title: "Feasibility", desc: "In-depth studies to ensure project viability before launch." },
                 { title: "Optimization", desc: "Streamlining business processes for maximum efficiency." },
-                { title: "Stakeholders", desc: "Managing relationships to ensure smooth project delivery." },
+                { title: "Stakeholders", desc: "Managing relationships to ensure smooth social license to operate." },
               ].map((item, idx) => (
                 <div key={idx} className="group border-b border-stone-100 pb-8 hover:border-accent transition-colors duration-500">
                   <h4 className="text-2xl font-display font-bold text-stone-900 mb-4 flex items-center gap-3">
@@ -110,6 +110,11 @@ const Home: React.FC = () => {
               <img src="/partners/lec.png" alt="Liberia Electricity Corporation" className="h-16 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
               <img src="/partners/knet.png" alt="KNET Ltd" className="h-10 md:h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
               <img src="/partners/bil.jpg" alt="Banking Institute of Liberia" className="h-16 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500 mix-blend-multiply" />
+
+              {/* New Partners */}
+              <img src="/partners/university_of_liberia_logo.png" alt="University of Liberia" className="h-16 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+              <img src="/partners/echogroup.png" alt="Echo Group" className="h-12 md:h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+              <img src="/partners/mb.webp" alt="MB" className="h-16 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
 
               {/* Set 2 */}
               <img src="/partners/arcelormittal.png" alt="ArcelorMittal" className="h-12 md:h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />

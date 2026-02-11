@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import TrustStrip from './components/TrustStrip';
@@ -12,6 +12,7 @@ import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
 import Sitemap from './pages/Sitemap';
 import FAQ from './pages/FAQ';
+import NotFound from './pages/NotFound';
 
 import Founder from './pages/Founder';
 import Preloader from './components/Preloader';
@@ -40,6 +41,13 @@ const App: React.FC = () => {
   const contentRef = React.useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Developer Console Signature
+    console.log(
+      "%c L-PRO SOLUTIONS %c \n Engineered for Excellence. \n\n 🚀 Built with Passion for Liberia \n https://lprosolutions.org",
+      "background: #DC2626; color: #fff; padding: 10px; font-weight: bold; font-size: 20px; border-radius: 5px;",
+      "background: #1c1917; color: #fff; padding: 10px; font-size: 14px; border-radius: 5px;"
+    );
+
     // Initialize Lenis Smooth Scroll
     if (typeof Lenis !== 'undefined') {
       const lenis = new Lenis({
@@ -119,6 +127,7 @@ const App: React.FC = () => {
             <Route path="/sitemap" element={<Sitemap />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/founder" element={<Founder />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { HardHat, ShieldCheck, GraduationCap, ArrowRight } from 'lucide-react';
+import { HardHat, ShieldCheck, GraduationCap, ArrowRight, LayoutDashboard, Zap } from 'lucide-react';
 import TiltCard from './TiltCard';
 
 const ServicesGrid: React.FC = () => {
@@ -20,18 +20,18 @@ const ServicesGrid: React.FC = () => {
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-          {/* Card 1: Engineering */}
+          {/* Card 1: Project Management */}
           <Link to="/services" className="group block h-full">
             <TiltCard className="h-full">
               <div className="h-full bg-white/5 border border-white/10 p-10 rounded-[2rem] transition-all duration-500 ease-out hover:bg-white/[0.08] hover:border-accent relative overflow-hidden flex flex-col" style={{ transformStyle: 'preserve-3d' }}>
 
                 <div className="w-16 h-16 bg-stone-800 rounded-2xl flex items-center justify-center mb-8 text-white group-hover:text-accent transition-colors duration-300 shadow-xl" style={{ transform: 'translateZ(40px)' }}>
-                  <HardHat size={32} strokeWidth={1.5} />
+                  <LayoutDashboard size={32} strokeWidth={1.5} />
                 </div>
 
-                <h3 className="text-2xl font-bold mb-4" style={{ transform: 'translateZ(30px)' }}>Engineering</h3>
+                <h3 className="text-2xl font-bold mb-4" style={{ transform: 'translateZ(30px)' }}>Project Management</h3>
                 <p className="text-stone-400 leading-relaxed mb-8 flex-grow" style={{ transform: 'translateZ(20px)' }}>
-                  Precision execution for complex infrastructure challenges. We handle everything from civil works to high-rise structures.
+                  Centralized oversight for complex initiatives. We provide the PMO structures and governance needed for success.
                 </p>
 
                 <div className="flex items-center gap-2 text-sm font-bold text-stone-500 group-hover:text-accent transition-colors duration-300" style={{ transform: 'translateZ(15px)' }}>
@@ -43,7 +43,7 @@ const ServicesGrid: React.FC = () => {
             </TiltCard>
           </Link>
 
-          {/* Card 2: Governance */}
+          {/* Card 2: Governance & Risk */}
           <Link to="/services" className="group block h-full">
             <TiltCard className="h-full">
               <div className="h-full bg-white/5 border border-white/10 p-10 rounded-[2rem] transition-all duration-500 ease-out hover:bg-white/[0.08] hover:border-accent relative overflow-hidden flex flex-col" style={{ transformStyle: 'preserve-3d' }}>
@@ -54,7 +54,7 @@ const ServicesGrid: React.FC = () => {
 
                 <h3 className="text-2xl font-bold mb-4" style={{ transform: 'translateZ(30px)' }}>Governance</h3>
                 <p className="text-stone-400 leading-relaxed mb-8 flex-grow" style={{ transform: 'translateZ(20px)' }}>
-                  Rigorous PMO standards to ensure transparency and efficiency. We eliminate waste and ensure regulatory compliance.
+                  Rigorous frameworks to ensure transparency and efficiency. We eliminate waste and ensure regulatory compliance.
                 </p>
 
                 <div className="flex items-center gap-2 text-sm font-bold text-stone-500 group-hover:text-accent transition-colors duration-300" style={{ transform: 'translateZ(15px)' }}>
@@ -66,7 +66,7 @@ const ServicesGrid: React.FC = () => {
             </TiltCard>
           </Link>
 
-          {/* Card 3: Capacity */}
+          {/* Card 3: Strategic Training */}
           <Link to="/services" className="group block h-full">
             <TiltCard className="h-full">
               <div className="h-full bg-white/5 border border-white/10 p-10 rounded-[2rem] transition-all duration-500 ease-out hover:bg-white/[0.08] hover:border-accent relative overflow-hidden flex flex-col" style={{ transformStyle: 'preserve-3d' }}>
@@ -75,9 +75,9 @@ const ServicesGrid: React.FC = () => {
                   <GraduationCap size={32} strokeWidth={1.5} />
                 </div>
 
-                <h3 className="text-2xl font-bold mb-4" style={{ transform: 'translateZ(30px)' }}>Capacity</h3>
+                <h3 className="text-2xl font-bold mb-4" style={{ transform: 'translateZ(30px)' }}>Strategic Training</h3>
                 <p className="text-stone-400 leading-relaxed mb-8 flex-grow" style={{ transform: 'translateZ(20px)' }}>
-                  Training the next generation of African builders. We leave behind more than just buildings; we leave skills.
+                  Building institutional capacity through targeted training programs. We empower local teams with world-class skills.
                 </p>
 
                 <div className="flex items-center gap-2 text-sm font-bold text-stone-500 group-hover:text-accent transition-colors duration-300" style={{ transform: 'translateZ(15px)' }}>

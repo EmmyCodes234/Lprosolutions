@@ -1,0 +1,70 @@
+@media print {
+
+    /* Reset colors for paper - Saving ink and ensuring legibility */
+    * {
+        background: transparent !important;
+        color: #000 !important;
+        text-shadow: none !important;
+        box-shadow: none !important;
+    }
+
+    body {
+        background: #fff !important;
+        color: #000 !important;
+    }
+
+    /* Hide high-end digital flourishes that don't translate to paper */
+    nav,
+    footer form,
+    .noise-overlay,
+    .sound-manager,
+    button,
+    .cursor-dot,
+    .magnetic-wrap,
+    .liquid-img-container canvas {
+        display: none !important;
+    }
+
+    /* Ensure content is full width and readable */
+    main,
+    .container,
+    .section {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 20px !important;
+        display: block !important;
+    }
+
+    /* Heading handling */
+    h1,
+    h2,
+    h3 {
+        page-break-after: avoid;
+        color: #000 !important;
+    }
+
+    p,
+    img {
+        page-break-inside: avoid;
+    }
+
+    /* Add real URLs to links so printed paper remains functional as a reference */
+    a[href]::after {
+        content: " (" attr(href) ")";
+        font-size: 0.75rem;
+        color: #444;
+    }
+
+    /* Image handling */
+    img {
+        max-width: 100% !important;
+        filter: grayscale(100%);
+    }
+
+    /* RevealText fallback for print */
+    .reveal-word {
+        opacity: 1 !important;
+        color: #000 !important;
+        transform: none !important;
+    }
+}

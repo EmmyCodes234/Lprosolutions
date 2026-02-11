@@ -58,9 +58,9 @@ const About: React.FC = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {[
-                { title: "Precision", desc: "We measure twice, cut once. Attention to detail is at the core of our engineering philosophy.", icon: "01" },
-                { title: "Transparency", desc: "No hidden costs, no ambiguity. We believe in clear communication and accountability.", icon: "02" },
-                { title: "Community", desc: "We build for the people, employing local talent and ensuring long-term community benefit.", icon: "03" },
+                { title: "Precision", desc: "Data-driven decision making. We rely on comprehensive analytics to guide every strategic move.", icon: "01" },
+                { title: "Transparency", desc: "No hidden costs, no ambiguity. We believe in clear governance and accountability.", icon: "02" },
+                { title: "value", desc: "We prioritize stakeholder value, ensuring that every project delivers tangible benefits to the community.", icon: "03" },
                 { title: "Global Standards", desc: "We apply international best practices (PMI, ISO) to ensure world-class quality.", icon: "04" },
               ].map((val, i) => (
                 <div key={i} className="bg-white p-8 rounded-[2.5rem] border border-stone-100 shadow-sm transition-all hover:-translate-y-2 hover:shadow-xl group">
