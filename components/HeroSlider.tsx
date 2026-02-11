@@ -58,6 +58,7 @@ const HeroSlider: React.FC = () => {
             alt=""
             fetchPriority={index === 0 ? "high" : "auto"}
             loading={index === 0 ? "eager" : "lazy"}
+            decoding={index === 0 ? "sync" : "async"}
             className={`absolute inset-0 w-full h-full object-cover transition-transform duration-[20000ms] ease-linear ${index === currentSlide ? 'scale-110' : 'scale-100'
               }`}
           />

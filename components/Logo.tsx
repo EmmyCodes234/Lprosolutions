@@ -13,6 +13,8 @@ const Logo: React.FC<LogoProps> = ({ color = 'dark', className = '', height = 'h
       <img
         src="/partners/lprogearlogo.png"
         alt="L-Pro Solutions"
+        fetchPriority="high"
+        decoding="sync"
         className={`${height} w-auto transition-all duration-300 ${color === 'dark' ? 'brightness-0' : ''
           }`}
         style={{ objectFit: 'contain' }}

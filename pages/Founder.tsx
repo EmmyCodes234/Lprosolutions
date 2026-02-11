@@ -11,6 +11,8 @@ const Founder: React.FC = () => {
                     <img
                         src="/founder/hero.jpg"
                         alt="James Monbo Lynch"
+                        fetchPriority="high"
+                        decoding="sync"
                         className="w-full h-full object-cover object-top"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-900/40 to-transparent opacity-90" />

@@ -9,6 +9,8 @@ const About: React.FC = () => {
         <img
           src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2669&auto=format&fit=crop"
           alt="L-Pro Office"
+          fetchPriority="high"
+          decoding="sync"
           className="absolute inset-0 w-full h-full object-cover opacity-60 scale-105 animate-[slowZoom_20s_infinite_alternate]"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-stone-900/40 via-transparent to-stone-50" />

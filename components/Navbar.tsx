@@ -228,6 +228,8 @@ const Navbar: React.FC = () => {
                   <img
                     src={activeContent.image}
                     alt={activeContent.title}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-80" />
@@ -245,6 +247,8 @@ const Navbar: React.FC = () => {
                 <Link to="/contact" onClick={() => setIsOpen(false)} className="flex-1 relative rounded-[2.5rem] overflow-hidden group cursor-pointer shadow-lg hover:shadow-2xl transition-all">
                   <img
                     src="/web images/1001836396.jpg"
+                    loading="lazy"
+                    decoding="async"
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     alt="HQ"
                   />
@@ -259,6 +263,8 @@ const Navbar: React.FC = () => {
                 <Link to="/contact" onClick={() => setIsOpen(false)} className="flex-1 relative rounded-[2.5rem] overflow-hidden group cursor-pointer shadow-lg hover:shadow-2xl transition-all">
                   <img
                     src="/web images/1001836405.jpg"
+                    loading="lazy"
+                    decoding="async"
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     alt="Meeting"
                   />
