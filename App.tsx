@@ -15,6 +15,8 @@ import FAQ from './pages/FAQ';
 import Blog from './pages/Blog';
 import Preloader from './components/Preloader';
 import ScrollToTopButton from './components/ScrollToTopButton';
+import CookieConsent from './components/CookieConsent';
+import NewsletterPopup from './components/NewsletterPopup';
 
 // Declare Lenis type for TS since we are using global script
 declare const Lenis: any;
@@ -86,6 +88,9 @@ const App: React.FC = () => {
       </div>
 
       <Footer />
+
+      <CookieConsent />
+      <NewsletterPopup />
 
     </Router>
   );
