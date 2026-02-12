@@ -7,7 +7,7 @@ const slides = [
   {
     id: 1,
     // Image: Corporate boardroom / Strategic planning
-    image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2664&auto=format&fit=crop',
+    image: '/images/generated/hero_strategy.png',
     title: <>Strategic<br />Vision.</>,
     subtitle: "Orchestrating complex initiatives with precision governance and global standards.",
     ctaPrimary: "Our Services",
@@ -16,7 +16,7 @@ const slides = [
   {
     id: 2,
     // Image: Data analysis / Project oversight
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop',
+    image: '/images/generated/hero_data.png',
     title: <>Data-Driven<br />Insights.</>,
     subtitle: "Feasibility studies and risk management that empower confident decision-making.",
     ctaPrimary: "View Expertise",
@@ -25,7 +25,7 @@ const slides = [
   {
     id: 3,
     // Image: Professional team / Capacity building
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2670&auto=format&fit=crop',
+    image: '/images/generated/hero_growth.png',
     title: <>Institutional<br />Growth.</>,
     subtitle: "Building capacity and transferring skills to ensure sustainable development.",
     ctaPrimary: "Training Programs",

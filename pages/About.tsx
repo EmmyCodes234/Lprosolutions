@@ -9,7 +9,7 @@ const About: React.FC = () => {
       {/* Immersive Hero Section */}
       <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-stone-900">
         <img
-          src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2669&auto=format&fit=crop"
+          src="/images/generated/about_hero.png"
           alt="L-Pro Office"
           fetchPriority="high"
           decoding="sync"
