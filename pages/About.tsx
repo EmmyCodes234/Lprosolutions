@@ -37,11 +37,11 @@ const About: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="space-y-12">
               <div>
-                <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-accent mb-4">Our Vision</h2>
+                <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-accent mb-4">Our Story</h2>
                 <RevealText
-                  className="text-3xl md:text-5xl font-display font-bold leading-tight tracking-tight"
+                  className="text-xl md:text-3xl font-display font-medium leading-tight tracking-tight"
                   activeColor="text-stone-900"
-                  text="To be the leading provider of innovative and effective project management solutions, empowering businesses in Liberia to achieve excellence, efficiency, and sustainable growth."
+                  text="Founded in 2018, L-Pro Solutions (Liberia Project Solutions) is a proudly Liberian-owned management consultancy firm committed to delivering world-class solutions that drive operational excellence, sustainable growth, and impactful transformation across sectors. With a solid foundation in project and program management, we serve as a trusted partner to private companies, government institutions, donor agencies, and international organizations operating in Liberia and beyond."
                 />
               </div>
 
@@ -51,7 +51,7 @@ const About: React.FC = () => {
                 <RevealText
                   className="text-stone-500 text-lg leading-relaxed"
                   activeColor="text-stone-900"
-                  text="At L-Pro Solutions, we are committed to delivering top-tier project management, training, and consultancy services that enhance organizational efficiency and project success. We partner with businesses across diverse industries, providing tailored solutions, best practices, and expert guidance to drive impactful results. Fostering a culture of excellence, accountability, and continuous improvement in Liberia's project management landscape."
+                  text="At L-Pro Solutions, we specialize in designing and implementing robust strategies that align people, processes, and performance. Our team of certified and experienced professionals brings together deep industry knowledge and global best practices to solve complex challenges and deliver high-impact results."
                 />
               </div>
             </div>
@@ -80,9 +80,9 @@ const About: React.FC = () => {
         <div className="max-w-[1440px] mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 text-center">
             {[
-              { label: "Projects Managed", value: "150+" },
-              { label: "Community Impact", value: "10K+", suffix: "People" },
-              { label: "Team Excellence", value: "50+", suffix: "Experts" },
+              { label: "Projects Managed", value: "25" },
+              { label: "Community Impact", value: "5k+", suffix: "People" },
+              { label: "Team Excellence", value: "15+", suffix: "Experts" },
               { label: "Client Satisfaction", value: "100%" },
             ].map((stat, i) => (
               <div key={i}>

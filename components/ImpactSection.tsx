@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 
 const stats = [
-  { id: 1, value: 150, suffix: 'M+', label: 'Project Value Managed (USD)' },
-  { id: 2, value: 100, suffix: '%', label: 'Regulatory Compliance' },
-  { id: 3, value: 12, suffix: 'Years', label: 'Operational Excellence' },
+  { id: 1, value: 25, suffix: '', label: 'Projects' },
+  { id: 2, value: 5, suffix: 'k+', label: 'Community Impact' },
+  { id: 3, value: 15, suffix: '+', label: 'Team Excellence' },
 ];
 
 const partners = [
