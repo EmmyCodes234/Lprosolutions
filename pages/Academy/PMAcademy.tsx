@@ -631,34 +631,23 @@ export default function PMAcademy() {
         <div className="flex h-full bg-stone-950 text-stone-200 overflow-hidden">
 
 
-            {/* PANE 2: Contextual Sidebar (Desktop: Static, Mobile: Fixed Overlay) */}
-            <div className={`
-                fixed inset-0 z-50 bg-stone-950 flex flex-col transition-transform duration-300 transform
-                lg:translate-x-0 lg:static lg:w-80 lg:border-r lg:border-stone-800 lg:flex-shrink-0
-                ${mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}
-            `}>
-                <div className="p-8 border-b border-stone-800 flex-shrink-0 bg-stone-900 flex justify-between items-start">
-                    <div>
-                        <h2 className="text-[10px] font-bold text-stone-500 uppercase tracking-widest mb-2">L-Pro Academy</h2>
-                        <h1 className="text-lg font-bold text-white leading-tight mb-6">{courseData.courseTitle}</h1>
-                        <div className="flex items-center justify-between text-[10px] font-mono font-bold text-stone-500 mb-2">
-                            <span>YOUR PROGRESS</span>
-                            <span>15%</span>
-                        </div>
-                        <div className="h-1 w-full bg-stone-800 rounded-full overflow-hidden">
-                            <div className="h-full bg-[#FFD700] w-[15%] shadow-[0_0_10px_rgba(255,215,0,0.5)]"></div>
-                        </div>
+            {/* PANE 2: Contextual Sidebar (Desktop) */}
+            <div className="hidden lg:flex w-80 bg-stone-900 border-r border-stone-800 flex-col flex-shrink-0 z-20">
+                <div className="p-8 border-b border-stone-800 flex-shrink-0 bg-stone-900">
+                    <h2 className="text-[10px] font-bold text-stone-500 uppercase tracking-widest mb-2">L-Pro Academy</h2>
+                    <h1 className="text-lg font-bold text-white leading-tight mb-6">{courseData.courseTitle}</h1>
+                    <div className="flex items-center justify-between text-[10px] font-mono font-bold text-stone-500 mb-2">
+                        <span>YOUR PROGRESS</span>
+                        <span>15%</span>
                     </div>
-                    {/* Mobile Close Button */}
-                    <button onClick={() => setMobileMenuOpen(false)} className="lg:hidden text-stone-500 hover:text-white">
-                        <X className="w-6 h-6" />
-                    </button>
+                    <div className="h-1 w-full bg-stone-800 rounded-full overflow-hidden">
+                        <div className="h-full bg-[#FFD700] w-[15%] shadow-[0_0_10px_rgba(255,215,0,0.5)]"></div>
+                    </div>
                 </div>
 
                 <div className="flex-grow overflow-y-auto custom-scrollbar">
                     {courseData.modules.map((module, mIdx) => (
                         <div key={module.moduleId} className="border-b border-stone-800/50">
-                            {/* Module Header */}
                             <button
                                 onClick={() => toggleModule(mIdx)}
                                 className="w-full text-left p-6 transition-colors hover:bg-stone-800/50 flex items-start gap-4 group"
@@ -677,15 +666,11 @@ export default function PMAcademy() {
                                 </div>
                             </button>
 
-                            {/* Lessons List */}
                             <div className={`bg-stone-950 border-t border-stone-900 overflow-hidden transition-all duration-300 ${expandedModules[mIdx] ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'}`}>
                                 {module.lessons.map((lesson, lIdx) => (
                                     <button
                                         key={lesson.id}
-                                        onClick={() => {
-                                            handleLessonSelect(mIdx, lIdx);
-                                            setMobileMenuOpen(false); // Close menu on selection
-                                        }}
+                                        onClick={() => handleLessonSelect(mIdx, lIdx)}
                                         className={`w-full text-left pl-14 pr-6 py-4 border-b border-stone-900 flex items-center justify-between group transition-all duration-300 ease-out hover:scale-[1.01] hover:bg-stone-800/80 relative
                                             ${activeModuleIndex === mIdx && activeLessonIndex === lIdx ? 'bg-stone-900 text-white' : 'text-stone-500 hover:text-stone-300'}
                                         `}
@@ -693,17 +678,14 @@ export default function PMAcademy() {
                                         {activeModuleIndex === mIdx && activeLessonIndex === lIdx && (
                                             <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#FFD700]"></div>
                                         )}
-
                                         <div className="flex items-center gap-3">
                                             {lesson.type === 'video' && <Play className="w-3 h-3" />}
                                             {lesson.type === 'reading' && <FileText className="w-3 h-3" />}
                                             {lesson.type === 'audio' && <Headphones className="w-3 h-3" />}
                                             {lesson.type === 'document' && <Download className="w-3 h-3" />}
                                             {lesson.type === 'quiz' && <Award className="w-3 h-3" />}
-
                                             <span className="text-xs font-medium truncate max-w-[180px]">{lesson.title}</span>
                                         </div>
-
                                         {activeModuleIndex === mIdx && activeLessonIndex === lIdx && (
                                             <div className="w-1.5 h-1.5 bg-[#FFD700] rounded-full shadow-[0_0_8px_#FFD700]"></div>
                                         )}
@@ -712,6 +694,88 @@ export default function PMAcademy() {
                             </div>
                         </div>
                     ))}
+                </div>
+            </div>
+
+            {/* PANE 2: Contextual Sidebar (Mobile Overlay) */}
+            <div className={`
+                fixed inset-0 z-50 flex lg:hidden
+                ${mobileMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'}
+            `}>
+                {/* Backdrop */}
+                <div
+                    className={`absolute inset-0 bg-black/80 backdrop-blur-sm transition-opacity duration-300 ${mobileMenuOpen ? 'opacity-100' : 'opacity-0'}`}
+                    onClick={() => setMobileMenuOpen(false)}
+                ></div>
+
+                {/* Drawer */}
+                <div className={`
+                    w-[85vw] max-w-[320px] bg-stone-950 border-r border-stone-800 flex flex-col items-start shadow-2xl transition-transform duration-300 transform
+                    ${mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}
+                `}>
+                    <div className="w-full p-8 border-b border-stone-800 flex-shrink-0 bg-stone-900 flex justify-between items-start">
+                        <div>
+                            <h2 className="text-[10px] font-bold text-stone-500 uppercase tracking-widest mb-2">L-Pro Academy</h2>
+                            <h1 className="text-lg font-bold text-white leading-tight mb-6">{courseData.courseTitle}</h1>
+                            <div className="flex items-center justify-between text-[10px] font-mono font-bold text-stone-500 mb-2">
+                                <span>YOUR PROGRESS</span>
+                                <span>15%</span>
+                            </div>
+                            <div className="h-1 w-full bg-stone-800 rounded-full overflow-hidden">
+                                <div className="h-full bg-[#FFD700] w-[15%] shadow-[0_0_10px_rgba(255,215,0,0.5)]"></div>
+                            </div>
+                        </div>
+                        <button onClick={() => setMobileMenuOpen(false)} className="text-stone-500 hover:text-white">
+                            <X className="w-6 h-6" />
+                        </button>
+                    </div>
+
+                    <div className="w-full flex-grow overflow-y-auto custom-scrollbar">
+                        {courseData.modules.map((module, mIdx) => (
+                            <div key={module.moduleId} className="border-b border-stone-800/50">
+                                <button
+                                    onClick={() => toggleModule(mIdx)}
+                                    className="w-full text-left p-6 transition-colors hover:bg-stone-800/50 flex items-start gap-4 group"
+                                >
+                                    <div className={`mt-0.5 transition-transform duration-300 ${expandedModules[mIdx] ? 'rotate-90' : ''}`}>
+                                        <ChevronRight className="w-4 h-4 text-stone-600 group-hover:text-white" />
+                                    </div>
+                                    <div className="flex-1">
+                                        <div className="text-[9px] font-black uppercase tracking-widest text-stone-500 mb-1.5 flex justify-between">
+                                            <span>Section 0{module.moduleId}</span>
+                                            <span className="text-stone-700">{module.lessons.length} Lessons</span>
+                                        </div>
+                                        <div className="text-sm font-bold text-stone-300 group-hover:text-white leading-snug">
+                                            {module.title}
+                                        </div>
+                                    </div>
+                                </button>
+                                <div className={`bg-stone-950 border-t border-stone-900 overflow-hidden transition-all duration-300 ${expandedModules[mIdx] ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'}`}>
+                                    {module.lessons.map((lesson, lIdx) => (
+                                        <button
+                                            key={lesson.id}
+                                            onClick={() => {
+                                                handleLessonSelect(mIdx, lIdx);
+                                                setMobileMenuOpen(false);
+                                            }}
+                                            className={`w-full text-left pl-14 pr-6 py-4 border-b border-stone-900 flex items-center justify-between group transition-all duration-300 ease-out hover:scale-[1.01] hover:bg-stone-800/80 relative
+                                                ${activeModuleIndex === mIdx && activeLessonIndex === lIdx ? 'bg-stone-900 text-white' : 'text-stone-500 hover:text-stone-300'}
+                                            `}
+                                        >
+                                            <div className="flex items-center gap-3">
+                                                {lesson.type === 'video' && <Play className="w-3 h-3" />}
+                                                {lesson.type === 'reading' && <FileText className="w-3 h-3" />}
+                                                {lesson.type === 'audio' && <Headphones className="w-3 h-3" />}
+                                                {lesson.type === 'document' && <Download className="w-3 h-3" />}
+                                                {lesson.type === 'quiz' && <Award className="w-3 h-3" />}
+                                                <span className="text-xs font-medium truncate max-w-[180px]">{lesson.title}</span>
+                                            </div>
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
 

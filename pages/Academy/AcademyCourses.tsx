@@ -28,7 +28,7 @@ export default function AcademyCourses() {
                             <input
                                 type="text"
                                 placeholder="Search courses..."
-                                className="bg-stone-900/50 border border-stone-800 text-sm text-white pl-12 pr-4 py-3 w-full md:min-w-[300px] hover:border-stone-700 focus:border-[#FFD700] focus:ring-1 focus:ring-[#FFD700] focus:outline-none transition-all placeholder:text-stone-600"
+                                className="bg-stone-900/50 border border-stone-800 text-sm text-white pl-12 pr-4 py-3 w-full md:w-[360px] hover:border-stone-700 focus:border-[#FFD700] focus:ring-1 focus:ring-[#FFD700] focus:outline-none transition-all placeholder:text-stone-600"
                             />
                         </div>
                         <div className="flex flex-wrap bg-stone-900/50 border border-stone-800 p-1 gap-1">

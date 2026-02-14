@@ -15,74 +15,7 @@
   <link rel="preload" as="image" href="/images/generated/hero_strategy.png" fetchpriority="high" />
   <link rel="preload" as="image" href="/images/generated/hero_data.png" fetchpriority="low" />
   <link rel="preload" as="image" href="/images/generated/hero_growth.png" fetchpriority="low" />
-  <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            stone: {
-              50: '#fafaf9',
-              100: '#f5f5f4', // Main background tone
-              200: '#e7e5e4',
-              300: '#d6d3d1',
-              400: '#a8a29e',
-              500: '#78716c',
-              600: '#57534e',
-              700: '#44403c',
-              800: '#292524',
-              900: '#1c1917',
-              950: '#0c0a09', // Deeper black for luxury contrast
-            },
-            accent: {
-              DEFAULT: '#DC2626', // Red (matching logo gear)
-              hover: '#B91C1C',   // Darker Red (red-700)
-              light: '#EF4444',   // Lighter Red (red-500)
-            }
-          },
-          borderRadius: {
-            '4xl': '2rem',
-            '5xl': '2.5rem',
-          },
-          fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-            display: ['Outfit', 'sans-serif'], // Premium heading font
-            mono: ['Courier New', 'monospace'],
-          },
-          animation: {
-            'slow-zoom': 'slowZoom 20s infinite alternate',
-            'reveal-up': 'revealUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards',
-            'draw-line': 'drawLine 4s ease-out forwards',
-            'marquee': 'marquee 30s linear infinite',
-            'pulse-slow': 'pulseSlow 3s infinite',
-          },
-          keyframes: {
-            slowZoom: {
-              '0%': { transform: 'scale(1)' },
-              '100%': { transform: 'scale(1.1)' },
-            },
-            revealUp: {
-              '0%': { transform: 'translateY(100%)', opacity: '0' },
-              '100%': { transform: 'translateY(0)', opacity: '1' },
-            },
-            drawLine: {
-              '0%': { strokeDashoffset: '4000' },
-              '100%': { strokeDashoffset: '0' }
-            },
-            marquee: {
-              '0%': { transform: 'translateX(0%)' },
-              '100%': { transform: 'translateX(-50%)' },
-            },
-            pulseSlow: {
-              '0%, 100%': { opacity: '1' },
-              '50%': { opacity: '0.5' },
-            }
-          }
-        }
-      }
-    }
-  </script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700;900&display=swap');
 
