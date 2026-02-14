@@ -1,70 +1,99 @@
-@media print {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-    /* Reset colors for paper - Saving ink and ensuring legibility */
-    * {
-        background: transparent !important;
-        color: #000 !important;
-        text-shadow: none !important;
-        box-shadow: none !important;
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    font-weight: 500;
+    color: #646cff;
+    text-decoration: inherit;
+}
+
+a:hover {
+    color: #535bf2;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+}
+
+button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+
+button:hover {
+    border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        color: #213547;
+        background-color: #ffffff;
     }
 
-    body {
-        background: #fff !important;
-        color: #000 !important;
+    a:hover {
+        color: #747bff;
     }
 
-    /* Hide high-end digital flourishes that don't translate to paper */
-    nav,
-    footer form,
-    .noise-overlay,
-    .sound-manager,
-    button,
-    .cursor-dot,
-    .magnetic-wrap,
-    .liquid-img-container canvas {
-        display: none !important;
+    button {
+        background-color: #f9f9f9;
     }
+}
 
-    /* Ensure content is full width and readable */
-    main,
-    .container,
-    .section {
-        width: 100% !important;
-        margin: 0 !important;
-        padding: 20px !important;
-        display: block !important;
-    }
 
-    /* Heading handling */
-    h1,
-    h2,
-    h3 {
-        page-break-after: avoid;
-        color: #000 !important;
-    }
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
 
-    p,
-    img {
-        page-break-inside: avoid;
-    }
+::-webkit-scrollbar-track {
+    background: transparent;
+}
 
-    /* Add real URLs to links so printed paper remains functional as a reference */
-    a[href]::after {
-        content: " (" attr(href) ")";
-        font-size: 0.75rem;
-        color: #444;
-    }
+::-webkit-scrollbar-thumb {
+    background: #292524;
+    /* stone-800 */
+    border-radius: 10px;
+}
 
-    /* Image handling */
-    img {
-        max-width: 100% !important;
-        filter: grayscale(100%);
-    }
-
-    /* RevealText fallback for print */
-    .reveal-word {
-        opacity: 1 !important;
-        color: #000 !important;
-        transform: none !important;
-    }
+::-webkit-scrollbar-thumb:hover {
+    background: #44403c;
+    /* stone-700 */
 }

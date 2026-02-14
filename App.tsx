@@ -3,22 +3,41 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import TrustStrip from './components/TrustStrip';
-import Home from './pages/Home';
-import Services from './pages/Services';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import Projects from './pages/Projects';
-import Privacy from './pages/Privacy';
-import Terms from './pages/Terms';
-import Sitemap from './pages/Sitemap';
-import FAQ from './pages/FAQ';
-import NotFound from './pages/NotFound';
 
-import Founder from './pages/Founder';
 import Preloader from './components/Preloader';
 import ScrollToTopButton from './components/ScrollToTopButton';
 import CookieConsent from './components/CookieConsent';
 import NewsletterPopup from './components/NewsletterPopup';
+
+// Lazy Load Components for Code Splitting
+const Home = React.lazy(() => import('./pages/Home'));
+const Services = React.lazy(() => import('./pages/Services'));
+const About = React.lazy(() => import('./pages/About'));
+const Contact = React.lazy(() => import('./pages/Contact'));
+const Projects = React.lazy(() => import('./pages/Projects'));
+const Privacy = React.lazy(() => import('./pages/Privacy'));
+const Terms = React.lazy(() => import('./pages/Terms'));
+const Sitemap = React.lazy(() => import('./pages/Sitemap'));
+const FAQ = React.lazy(() => import('./pages/FAQ'));
+const NotFound = React.lazy(() => import('./pages/NotFound'));
+const Founder = React.lazy(() => import('./pages/Founder'));
+
+// Academy Components (Lazy)
+const AcademyLayout = React.lazy(() => import('./components/layouts/AcademyLayout'));
+const AcademyHome = React.lazy(() => import('./pages/Academy/AcademyHome'));
+const AcademyCourses = React.lazy(() => import('./pages/Academy/AcademyCourses'));
+const AcademyCertificates = React.lazy(() => import('./pages/Academy/AcademyCertificates'));
+const AcademySettings = React.lazy(() => import('./pages/Academy/AcademySettings'));
+const CoursePlayer = React.lazy(() => import('./pages/Academy/CoursePlayer'));
+const PMAcademy = React.lazy(() => import('./pages/Academy/PMAcademy'));
+const AcademyAdmin = React.lazy(() => import('./pages/Academy/AcademyAdmin'));
+
+// Fallback for Suspense
+const Loading = () => (
+  <div className="flex h-screen w-full items-center justify-center bg-stone-50">
+    <div className="h-8 w-8 animate-spin rounded-full border-4 border-stone-200 border-t-accent" />
+  </div>
+);
 
 // Declare Lenis type for TS since we are using global script
 declare const Lenis: any;
@@ -40,6 +59,9 @@ const App: React.FC = () => {
   const footerRef = React.useRef<HTMLDivElement>(null);
   const contentRef = React.useRef<HTMLDivElement>(null);
 
+  const { pathname } = useLocation();
+  const isAcademy = pathname.startsWith('/academy');
+
   useEffect(() => {
     // Developer Console Signature
     console.log(
@@ -48,8 +70,8 @@ const App: React.FC = () => {
       "background: #1c1917; color: #fff; padding: 10px; font-size: 14px; border-radius: 5px;"
     );
 
-    // Initialize Lenis Smooth Scroll
-    if (typeof Lenis !== 'undefined') {
+    // Initialize Lenis Smooth Scroll only if NOT in Academy
+    if (typeof Lenis !== 'undefined' && !isAcademy) {
       const lenis = new Lenis({
         duration: 1.2,
         easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -94,7 +116,7 @@ const App: React.FC = () => {
       resizeObserver.observe(footerRef.current);
       return () => resizeObserver.disconnect();
     }
-  }, []);
+  }, [isAcademy]);
 
   return (
     <>
@@ -102,48 +124,71 @@ const App: React.FC = () => {
       <Preloader />
       <ScrollToTopButton />
 
-      {/* Global Noise Overlay (Final Polish) */}
-      <div className="noise-overlay"></div>
-
-      {/* Refined Navigation - Outside of skew to ensure stability */}
-      <Navbar />
-
-      {/* Main Content Wrapper - Acts as the 'curtain' */}
-      <div
-        ref={contentRef}
-        className="relative z-10 bg-stone-50 rounded-b-[3rem] md:rounded-b-[5rem] flex flex-col min-h-screen shadow-2xl transition-all duration-300 ease-out will-change-transform"
-        style={{ marginBottom: `${footerHeight}px` }}
-      >
-
-        <main className="flex-grow">
+      {/* Academy Routes (All Wrapped in Premium Layout) */}
+      {isAcademy ? (
+        <React.Suspense fallback={<Loading />}>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/privacy" element={<Privacy />} />
-            <Route path="/terms" element={<Terms />} />
-            <Route path="/sitemap" element={<Sitemap />} />
-            <Route path="/faq" element={<FAQ />} />
-            <Route path="/founder" element={<Founder />} />
-            <Route path="*" element={<NotFound />} />
+            <Route element={<AcademyLayout />}>
+              <Route path="/academy" element={<PMAcademy />} />
+              <Route path="/academy/infrastructure-governance" element={<PMAcademy />} />
+              <Route path="/academy/dashboard" element={<AcademyHome />} />
+              <Route path="/academy/courses" element={<AcademyCourses />} />
+              <Route path="/academy/courses/:courseId" element={<CoursePlayer />} />
+              <Route path="/academy/certificates" element={<AcademyCertificates />} />
+              <Route path="/academy/profile" element={<AcademySettings />} />
+              <Route path="/academy/admin" element={<AcademyAdmin />} />
+            </Route>
           </Routes>
-        </main>
+        </React.Suspense>
+      ) : (
+        /* Main Site Structure (Hidden if in Academy) */
+        <>
+          {/* Global Noise Overlay (Final Polish) */}
+          <div className="noise-overlay"></div>
 
-        <TrustStrip />
-      </div>
+          {/* Refined Navigation - Outside of skew to ensure stability */}
+          <Navbar />
 
-      {/* Fixed Footer - Revealed on Scroll */}
-      <div
-        ref={footerRef}
-        className="fixed bottom-0 left-0 w-full -z-10"
-      >
-        <Footer />
-      </div>
+          {/* Main Content Wrapper - Acts as the 'curtain' */}
+          <div
+            ref={contentRef}
+            className="relative z-10 bg-stone-50 rounded-b-[3rem] md:rounded-b-[5rem] flex flex-col min-h-screen shadow-2xl transition-all duration-300 ease-out will-change-transform"
+            style={{ marginBottom: `${footerHeight}px` }}
+          >
 
-      <CookieConsent />
-      <NewsletterPopup />
+            <main className="flex-grow">
+              <React.Suspense fallback={<Loading />}>
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/services" element={<Services />} />
+                  <Route path="/projects" element={<Projects />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/contact" element={<Contact />} />
+                  <Route path="/privacy" element={<Privacy />} />
+                  <Route path="/terms" element={<Terms />} />
+                  <Route path="/sitemap" element={<Sitemap />} />
+                  <Route path="/faq" element={<FAQ />} />
+                  <Route path="/founder" element={<Founder />} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </React.Suspense>
+            </main>
+
+            <TrustStrip />
+          </div>
+
+          {/* Fixed Footer - Revealed on Scroll */}
+          <div
+            ref={footerRef}
+            className="fixed bottom-0 left-0 w-full -z-10"
+          >
+            <Footer />
+          </div>
+
+          <CookieConsent />
+          <NewsletterPopup />
+        </>
+      )}
     </>
   );
 };

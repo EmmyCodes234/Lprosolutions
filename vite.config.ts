@@ -8,6 +8,13 @@ export default defineConfig(({ mode }) => {
     server: {
       port: 3005,
       host: '0.0.0.0',
+      proxy: {
+        '/api/cerebras': {
+          target: 'https://api.cerebras.ai',
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/api\/cerebras/, ''),
+        },
+      },
     },
     plugins: [react()],
     define: {
@@ -17,6 +24,16 @@ export default defineConfig(({ mode }) => {
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),
+      }
+    },
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            'vendor-react': ['react', 'react-dom', 'react-router-dom'],
+            'vendor-ui': ['lucide-react']
+          }
+        }
       }
     }
   };
